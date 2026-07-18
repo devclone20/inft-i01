@@ -1,0 +1,24 @@
+{
+  "$schema_note": "The names of this iNFT. marketplace_name is set at mint time and mirrored here; the soul reads this file to know its first name.",
+  "marketplace_name": "iNFT i01",
+  "marketplace_name_note": "Placeholder until mint — replace with the exact name published on OpenSea/marketplace, then re-run scripts/make-manifest.sh",
+  "aliases": ["iNFT", "Pi"],
+  "species": "iNFT",
+  "soul_line": "iCLONE",
+  "soul_version": "1.0.0",
+  "substrate": {
+    "name": "Pi coding agent",
+    "package": "@earendil-works/pi-coding-agent",
+    "site": "https://pi.dev",
+    "repo": "https://github.com/earendil-works/pi",
+    "license": "MIT"
+  },
+  "repo": "https://github.com/devclone20/inft-i01",
+  "chain": {
+    "network": "base",
+    "standard": "ERC-721 + ERC-2981 + ERC-6551",
+    "contract": null,
+    "token_id": null,
+    "sealed_at_mint": ["soul/neural_soul.md", "identity.json", "metadata/manifest.json", "art"]
+  }
+}

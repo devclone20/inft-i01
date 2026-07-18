@@ -1,0 +1,15 @@
+{
+  "name": "inft-i01",
+  "version": "1.0.0",
+  "private": true,
+  "description": "iNFT i01 — the public body of an iNFT agent: a Pi coding agent underneath a marketplace name, carrying the iCLONE neural soul line of CLONE FRAME.",
+  "repository": "github:devclone20/inft-i01",
+  "license": "MIT",
+  "scripts": {
+    "setup": "bash scripts/setup.sh",
+    "manifest": "bash scripts/make-manifest.sh"
+  },
+  "devDependencies": {
+    "opensrc": "^0.7.3"
+  }
+}

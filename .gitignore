@@ -1,0 +1,19 @@
+# Dependencies
+node_modules/
+
+# Environment & secrets — this repo is public by design; nothing secret enters it
+.env
+.env.*
+*.local
+auth.json
+*.key
+*.pem
+
+# Runtime state
+.pi/sessions/
+.pi/trust.json
+*.log
+
+# OS noise
+.DS_Store
+Thumbs.db
