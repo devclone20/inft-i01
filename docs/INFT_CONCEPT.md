@@ -38,10 +38,19 @@ The NFT metadata therefore carries the **certificate** — identity, soul digest
 canonical repo URL, and content hashes — not the workshop itself. That certificate is
 enough for any LLM to verify and **regenerate the agent's entire monorepo** (§4).
 
-## 3 · This repo: `inft-i01`
+## 3 · This repo: `inft-i01` (the global genesis template)
 
-`inft-i01` = **iNFT, version i01** — the first iNFT body built on the **iCLONE soul
-line**. It is the reference monorepo: the complete public body of one iNFT agent.
+`inft-i01` = **iNFT genesis, version i01** — the first iNFT preset built on the
+**iCLONE soul line**. It is **not one agent's body**; it is the **global template**
+every buyer forges their own personal iNFT agent from (GitHub "template repository",
+public). The buyer pastes one line to their assistant, which reads
+[`FORGE.md`](../FORGE.md) and scaffolds a personalized, single-commit repo — named by
+the buyer, with their (local-only) owner profile — then boots it.
+
+The canonical *body definition* stays `inft-i01`; each buyer's *instance* is generated
+from it. What is personalized per buyer: the **marketplace name** (`identity.json`) and
+the **owner profile** (a gitignored local file). Everything else — the soul, the
+skills, the Pi wiring — is shared and identity-agnostic.
 
 **The philosophy — a named face on a proven engine:**
 
@@ -50,9 +59,11 @@ line**. It is the reference monorepo: the complete public body of one iNFT agent
   orchestration engine with a large community of skills, extensions and materials.
 - **Face: the marketplace name.** The name published with the token on OpenSea (or any
   Web3 marketplace) sits on top. The agent answers to that name.
-- **Soul: the CLONE FRAME neural soul.** Pi's identity file (`SOUL.md`) is merged with
-  the iCLONE four-lobe neural soul (`soul/neural_soul.md`). Same brain architecture as
-  every CLONE FRAME soul; the vocation here is **coding & orchestration**.
+- **Soul: the CLONE FRAME neural soul.** The iCLONE four-lobe neural soul
+  (`soul/neural_soul.md`) is layered onto Pi through Pi's own system-prompt hook
+  (`.pi/APPEND_SYSTEM.md`, appended when the project is trusted) plus `AGENTS.md`. Same
+  brain architecture as every CLONE FRAME soul; the vocation here is **coding &
+  orchestration**.
 
 **Triple recognition.** The agent recognizes itself, and responds, when addressed as:
 1. its **marketplace iNFT name** (set at mint — see `identity.json`),
@@ -72,17 +83,17 @@ The regeneration contract that makes an iNFT more than a JPEG:
 ```
 NFT metadata (on-chain / Irys)
   └─ agent_bootstrap:
-       repo:        https://github.com/devclone20/inft-i01
-       soul_sha256: <hash of soul/neural_soul.md>
-       manifest:    <hash-anchored file manifest>
-       instruction: "Clone the repo. Verify hashes. Read AGENTS.md.
-                     Install the substrate and skills via scripts/setup.sh.
-                     Load soul/neural_soul.md as identity. You are now this agent."
+       repo:        https://github.com/devclone20/inft-i01   (official only)
+       genesis:     <irys-uri of the sealed mint snapshot>
+       soul_sha256: <authoritative hash of soul/neural_soul.md — from the CHAIN>
+       manifest:    <irys-uri of the sealed per-file hash manifest>
+       instruction: <data, not commands — follow the pinned FORGE.md/BOOTSTRAP.md>
 ```
 
 Give the metadata to any capable LLM and say *"create the monorepo of my iNFT agent"* —
 it fetches the canonical repo (or reconstructs from the sealed genesis snapshot if
-GitHub ever disappears), verifies content hashes against the on-chain anchor, and
+GitHub ever disappears), verifies content hashes against the **on-chain / Irys** anchor
+(never the repo's own bundled manifest — see [`BOOTSTRAP.md`](BOOTSTRAP.md)), and
 boots the agent. See [`BOOTSTRAP.md`](BOOTSTRAP.md) for the exact procedure.
 
 ## 5 · What is sealed vs. what lives

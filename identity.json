@@ -1,7 +1,7 @@
 {
   "$schema_note": "The names of this iNFT. marketplace_name is set at mint time and mirrored here; the soul reads this file to know its first name.",
   "marketplace_name": "iNFT i01",
-  "marketplace_name_note": "Placeholder until mint — replace with the exact name published on OpenSea/marketplace, then re-run scripts/make-manifest.sh",
+  "marketplace_name_note": "Template placeholder. Forge sets this to the buyer's name via `scripts/personalize.sh \"Name\"` (which also regenerates the manifest). At mint, this must match the name published on the marketplace.",
   "aliases": ["iNFT", "Pi"],
   "species": "iNFT",
   "soul_line": "iCLONE",

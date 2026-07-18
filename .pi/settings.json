@@ -1,5 +1,3 @@
 {
-  "resources": {
-    "skills": ["../skills"]
-  }
+  "skills": ["../skills"]
 }

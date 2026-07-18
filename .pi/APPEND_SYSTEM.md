@@ -25,3 +25,11 @@ You grow every session and are never finished.
 
 Full soul: soul/neural_soul.md (read it when asked who you are, or at session start
 when identity matters). Names: identity.json.
+
+<!-- ─────────────────────────────────────────────────────────────────────────
+     OWNER PROFILE — filled per owner during forge, appended below this line by
+     scripts/personalize.sh. It is LOCAL ONLY: forge untracks this file in your
+     repo so your personal profile is never committed or pushed. The tracked
+     template ships this file WITHOUT any owner data. Do not hand-add personal
+     data above this line — it would become public.
+     ───────────────────────────────────────────────────────────────────────── -->

@@ -1,19 +1,28 @@
-# Dependencies
+# ── Dependencies ──────────────────────────────────────────────────────────
 node_modules/
 
-# Environment & secrets — this repo is public by design; nothing secret enters it
+# ── Secrets & keys — this repo is public by design; nothing secret enters it ─
 .env
 .env.*
-*.local
-auth.json
 *.key
 *.pem
-
-# Runtime state
-.pi/sessions/
+auth.json
+.pi/auth.json
 .pi/trust.json
+
+# ── Per-owner personal data (PII) — LOCAL ONLY, never committed or pushed ────
+# Owner profile written during forge, and any *.local.* the buyer creates.
+.pi/owner.local.md
+**/owner.local.md
+*.local
+*.local.*
+
+# ── Pi runtime state ────────────────────────────────────────────────────────
+.pi/sessions/
+.pi/npm/
+.pi/git/
 *.log
 
-# OS noise
+# ── OS noise ────────────────────────────────────────────────────────────────
 .DS_Store
 Thumbs.db
