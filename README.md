@@ -121,18 +121,46 @@ The full, self-contained procedure is [`FORGE.md`](FORGE.md).
   (read any dependency's real source: `opensrc path <pkg>`).
 - **BYOK** — you connect your own model key. It stays yours; it never enters this repo.
 
+## Give it an economy (optional)
+
+Forge gives the agent a body and a soul. **Economy OS** gives it a wallet, an email, a card,
+and the ability to **earn, spend, trade, and strike deals** — on the rail you choose. Paste
+to your assistant (it runs the steps; **you** approve the wallet, never the assistant):
+
+> **Set up my agent's Economy OS.** Fetch and follow, actually running the steps:
+> `https://raw.githubusercontent.com/devclone20/inft-i01/main/ECONOMY_OS.md`
+
+```mermaid
+flowchart TD
+    AG[[Your iNFT]] --> E{Economy OS<br/>pick a rail}
+    E --> V["Virtuals · acp CLI<br/>wallet · email · card · ACP · Hyperliquid"]
+    E --> R["Robinhood<br/>MCP brokerage trading · on-chain token launch"]
+    E --> O["OKX AI · onchainos<br/>ERC-8004 · agentic wallet · x402 · tasks"]
+    V --> F["faces: wallet · trading · card · email<br/>coded in iT, living in LAB"]
+    R --> F
+    O --> F
+```
+
+Guides: **[`ECONOMY_OS.md`](ECONOMY_OS.md)** → [Virtuals](docs/economy/virtuals.md) ·
+[Robinhood](docs/economy/robinhood.md) · [OKX](docs/economy/okx.md). Wallet approvals happen
+in **your** wallet/terminal. Then build the visual panels in the CLONE FRAME **iT** terminal
+and drop them in **LAB** — and with the **Harness Engine**, have the agent run a whole
+business on top of it.
+
 ## Map
 
 ```
-FORGE.md             the one-file procedure your assistant executes to set you up
+FORGE.md             forge the agent from an iNFT you bought
+ASSISTANT.md         forge a personal assistant (no iNFT required; bind one later)
+ECONOMY_OS.md        give the agent an economy — wallet · trade · commerce (3 rails)
 identity.json        the names (marketplace name · iNFT · Pi) + mint/contract fields
 soul/                neural_soul.md v1.0.0 + four-lobe skeleton + iCLONE v2.1.0 lineage
 .pi/                 Pi wiring: settings (skills) + APPEND_SYSTEM.md soul layer
 owner/               OWNER.example.md — the shape of a per-owner profile (filled locally)
 skills/cmux/         terminal-orchestration skill + 20 recipes (MIT, vendored)
-docs/                INFT_CONCEPT.md · BOOTSTRAP.md
+docs/                INFT_CONCEPT.md · BOOTSTRAP.md · economy/{virtuals,robinhood,okx}.md
 metadata/            ERC-721 template with agent_bootstrap + content-hash manifest
-scripts/             setup.sh · personalize.sh · boot.sh · make-manifest.sh
+scripts/             setup.sh · personalize.sh · install-command.sh · boot.sh · make-manifest.sh
 ```
 
 ## Regenerate from token metadata (any capable LLM)
