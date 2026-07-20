@@ -16,7 +16,80 @@ forged from it answers to three names: **its marketplace name · "iNFT" · "Pi"*
 
 ---
 
+## How it works — at a glance
+
+**The idea in one line:** a **name** you choose sits on top; the **Pi coding agent** runs
+underneath; an **iCLONE soul** gives it identity; **your key** gives it a mind. Own it as a
+plain assistant, or fuse it with an **iNFT** so the token proves who owns it.
+
+**Two ways in — with or without an iNFT:**
+
+```mermaid
+flowchart TD
+    U([You]) --> Q{Do you<br/>hold an iNFT?}
+    Q -->|Yes — I bought one| F["FORGE.md<br/>forge the agent from your token"]
+    Q -->|No — just want<br/>my own assistant| A["ASSISTANT.md<br/>forge a personal assistant"]
+    F --> AG[[Your agent]]
+    A --> AG
+    AG --> R["answers to: your name · iNFT · Pi<br/>runs on YOUR key (BYOK)<br/>learns your way, grows every session"]
+    A -.->|optional, anytime later| L["bind an iNFT<br/>(ASSISTANT.md Step 8)"]
+    L --> F
+```
+
+**One agent, four layers — a name on top, Pi underneath:**
+
+```mermaid
+flowchart TB
+    N["🪪 NAME — the face<br/>your marketplace name · iclone · pi"]
+    S["🧬 SOUL — the identity<br/>iCLONE neural soul: 4 lobes, immutable laws"]
+    P["⚙️ Pi — the substrate<br/>full Pi coding agent (MIT) + skills + tools"]
+    K["🔑 KEY — the mind (BYOK)<br/>your model: cloud API or local MATRIX cluster"]
+    N --> S --> P --> K
+```
+
+**Open it by name in the CLONE FRAME iT terminal:**
+
+```mermaid
+sequenceDiagram
+    participant U as You · iT terminal
+    participant L as ~/.clone-frame-hub/bin/&lt;name&gt;
+    participant P as Pi · in your agent repo
+    U->>L: type "iclone"
+    L->>P: cd agent-repo && pi -a
+    P-->>U: your assistant, awake — name · iNFT · Pi
+```
+
+**Where everything lives (only if you mint an iNFT — four houses, never all on-chain):**
+
+```mermaid
+flowchart LR
+    C["⛓️ Chain — the catalog<br/>token = who owns the agent"]
+    I["🗄️ Irys / Arweave — the archive<br/>sealed genesis + content hashes"]
+    G["🛠️ GitHub — the workshop<br/>the monorepo, per commit"]
+    V["🔒 Runtime — the vault<br/>keys + private memory · encrypted · local"]
+    C -.->|pointer| I -.->|anchors| G -.->|feeds| V
+```
+
+*Plain-language philosophy:* the token is a **catalog card**, not the agent. The agent's
+body is an ordinary Git **monorepo** anyone (or any LLM) can rebuild; its provenance is
+**anchored** on Irys/chain so a tampered copy can't fake it; its **secrets and memory**
+never leave the owner's machine. Hand the token's `agent_bootstrap` block — or just this
+repo — to **any capable LLM** and say *"set up my agent"*, and it can. That portability is
+the point: **the agent is data + a substrate, not a hosted black box.**
+
+---
+
 ## Forge yours — paste this to your AI assistant
+
+**Two paths — pick one:**
+- **I hold an iNFT** → forge the agent from your token: use **[`FORGE.md`](FORGE.md)** (phrase below).
+- **I just want a personal assistant** (no iNFT needed; bind one later if you want) →
+  use **[`ASSISTANT.md`](ASSISTANT.md)**. Paste to your assistant:
+  > **Be my CLONE FRAME assistant forge.** Fetch, read the whole file, and follow its
+  > steps exactly (actually do them): `https://raw.githubusercontent.com/devclone20/inft-i01/main/ASSISTANT.md`
+  > Ask me my agent's name and a short profile, then wait.
+
+### iNFT path — paste this to your AI assistant
 
 > **Be my iNFT forge.** Fetch this URL, read the whole file, and follow its steps
 > exactly — actually do them, don't just summarize:
