@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 420" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14">
+  <defs>
+    <linearGradient id="violine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#b18bf5" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#b18bf5" stop-opacity="0.1"/>
+    </linearGradient>
+    <radialGradient id="vglow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#b18bf5" stop-opacity="0.13"/>
+      <stop offset="1" stop-color="#b18bf5" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1400" height="420" rx="14" fill="#0d1117"/>
+  <rect x="1.5" y="1.5" width="1397" height="417" rx="13" fill="none" stroke="#30363d" stroke-width="3"/>
+  <rect x="0" y="412" width="1400" height="4" fill="url(#violine)" opacity="0.9"/>
+
+  <circle cx="28" cy="26" r="6" fill="#ff5f57"/>
+  <circle cx="50" cy="26" r="6" fill="#febc2e"/>
+  <circle cx="72" cy="26" r="6" fill="#28c840"/>
+  <text x="1360" y="31" text-anchor="end" font-size="12" fill="#566070">iNFT genesis · template</text>
+
+  <!-- the mold — a blueprint of a clone -->
+  <circle cx="230" cy="210" r="185" fill="url(#vglow)"/>
+  <line x1="230" y1="95" x2="230" y2="68" stroke="#b18bf5" stroke-width="2" stroke-dasharray="4 3"/>
+  <circle cx="230" cy="63" r="4.5" fill="none" stroke="#b18bf5" stroke-width="1.6"/>
+  <rect x="155" y="95" width="150" height="235" rx="75" fill="#12101a" stroke="#b18bf5" stroke-width="2" stroke-opacity="0.7" stroke-dasharray="7 5"/>
+  <rect x="180" y="150" width="100" height="115" rx="16" fill="#0a0810" stroke="#b18bf5" stroke-width="1.5" stroke-opacity="0.8" stroke-dasharray="5 4"/>
+  <rect x="207.5" y="178" width="9" height="26" rx="4.5" fill="none" stroke="#b18bf5" stroke-width="1.6"/>
+  <rect x="243.5" y="178" width="9" height="26" rx="4.5" fill="none" stroke="#b18bf5" stroke-width="1.6"/>
+  <path d="M210 226 Q230 240 250 226" fill="none" stroke="#b18bf5" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="5 4"/>
+  <text x="230" y="364" text-anchor="middle" font-size="11" fill="#566070">i · 01 — the genesis mold</text>
+
+  <!-- wordmark -->
+  <text x="398" y="178" font-size="76" font-weight="bold" letter-spacing="2"><tspan fill="#e6edf3">inft</tspan><tspan fill="#566070">-</tspan><tspan fill="#b18bf5">i01</tspan></text>
+  <text x="400" y="228" font-size="24" fill="#c9d1d9">The global iNFT genesis template</text>
+  <text x="400" y="266" font-size="14.5" fill="#8b949e">forge your own AI agent from the iNFT you hold — one line pasted to your assistant</text>
+  <text x="400" y="288" font-size="14.5" fill="#8b949e">a name on top · Pi underneath · an iCLONE soul · your key as its mind</text>
+
+  <!-- chips -->
+  <g font-size="13">
+    <rect x="400" y="316" width="164" height="34" rx="17" fill="#161b22" stroke="#30363d" stroke-width="1.5"/>
+    <text x="482" y="338" text-anchor="middle" fill="#b18bf5">iNFT genesis · i01</text>
+    <rect x="578" y="316" width="164" height="34" rx="17" fill="#161b22" stroke="#30363d" stroke-width="1.5"/>
+    <text x="660" y="338" text-anchor="middle" fill="#c9d1d9">Pi substrate — MIT</text>
+    <rect x="756" y="316" width="172" height="34" rx="17" fill="#161b22" stroke="#30363d" stroke-width="1.5"/>
+    <text x="842" y="338" text-anchor="middle" fill="#9fe016">iCLONE soul lineage</text>
+    <rect x="942" y="316" width="66" height="34" rx="17" fill="#161b22" stroke="#30363d" stroke-width="1.5"/>
+    <text x="975" y="338" text-anchor="middle" fill="#5ed3d8">BYOK</text>
+    <rect x="1022" y="316" width="180" height="34" rx="17" fill="#161b22" stroke="#30363d" stroke-width="1.5"/>
+    <text x="1112" y="338" text-anchor="middle" fill="#6ea8ff">Base · Irys · GitHub</text>
+  </g>
+</svg>

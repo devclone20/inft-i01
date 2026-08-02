@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 380" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14">
+  <defs>
+    <linearGradient id="violine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#b18bf5" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#b18bf5" stop-opacity="0.1"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1100" height="380" rx="14" fill="#0d1117"/>
+  <rect x="1.5" y="1.5" width="1097" height="377" rx="13" fill="none" stroke="#30363d" stroke-width="3"/>
+  <rect x="0" y="372" width="1100" height="4" fill="url(#violine)" opacity="0.9"/>
+
+  <circle cx="28" cy="26" r="6" fill="#ff5f57"/>
+  <circle cx="50" cy="26" r="6" fill="#febc2e"/>
+  <circle cx="72" cy="26" r="6" fill="#28c840"/>
+  <g stroke="#b18bf5" fill="none" stroke-linecap="round">
+    <rect x="101" y="15.5" width="20" height="17" rx="6" stroke-width="1.6" stroke-dasharray="3 2.5"/>
+    <line x1="111" y1="15.5" x2="111" y2="11.5" stroke-width="1.6"/>
+    <circle cx="111" cy="10" r="1.6" stroke-width="1.2"/>
+    <circle cx="106.8" cy="22" r="1.7" stroke-width="1.2"/>
+    <circle cx="115.2" cy="22" r="1.7" stroke-width="1.2"/>
+    <path d="M107 27 Q111 30 115 27" stroke-width="1.4" stroke-dasharray="2.5 2"/>
+  </g>
+  <text x="550" y="31" text-anchor="middle" font-size="13" fill="#8b949e">the forge — from the token you hold to an agent that knows you</text>
+
+  <g font-size="12">
+    <rect x="40" y="120" width="270" height="120" rx="10" fill="#161b22" stroke="#c9d1d9" stroke-width="2"/>
+    <text x="62" y="152" fill="#e6edf3" font-weight="bold" font-size="14">YOU</text>
+    <text x="62" y="178" fill="#c9d1d9">you hold an iNFT</text>
+    <text x="62" y="200" fill="#566070" font-size="11">the token is the proof</text>
+
+    <rect x="390" y="120" width="290" height="120" rx="10" fill="#161b22" stroke="#b18bf5" stroke-width="2.5"/>
+    <text x="412" y="152" fill="#b18bf5" font-weight="bold" font-size="14">FORGE.md</text>
+    <text x="412" y="178" fill="#c9d1d9">one line pasted to your assistant</text>
+    <text x="412" y="200" fill="#566070" font-size="11">it reads · asks your name · builds</text>
+
+    <rect x="760" y="100" width="300" height="160" rx="10" fill="#161b22" stroke="#9fe016" stroke-width="2.5"/>
+    <text x="782" y="132" fill="#9fe016" font-weight="bold" font-size="14">YOUR AGENT</text>
+    <text x="782" y="158" fill="#c9d1d9">answers to: name · iNFT · Pi</text>
+    <text x="782" y="180" fill="#c9d1d9">runs on YOUR key (BYOK)</text>
+    <text x="782" y="202" fill="#8b949e">learns your way,</text>
+    <text x="782" y="222" fill="#8b949e">grows every session</text>
+  </g>
+
+  <g stroke="#566070" stroke-width="2.5" fill="none">
+    <path d="M310 180 382 180"/><path d="M375 174 384 180 375 186"/>
+    <path d="M680 180 752 180"/><path d="M745 174 754 180 745 186"/>
+  </g>
+
+  <text x="550" y="326" text-anchor="middle" fill="#8b949e" font-size="13">no hosted black box — the agent is data + a substrate you own</text>
+</svg>

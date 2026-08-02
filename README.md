@@ -1,4 +1,14 @@
-# inft-i01 — the global iNFT genesis template
+<p align="center">
+  <img src="docs/assets/hero.svg" width="100%" alt="inft-i01 — the global iNFT genesis template">
+</p>
+
+<p align="center">
+  <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-b18bf5?style=flat-square"></a>
+  <img alt="Template" src="https://img.shields.io/badge/template-use_this_template-e6edf3?style=flat-square">
+  <img alt="Substrate: Pi coding agent" src="https://img.shields.io/badge/substrate-Pi_coding_agent-ff3b30?style=flat-square">
+  <img alt="Soul: iCLONE lineage" src="https://img.shields.io/badge/soul-iCLONE_lineage-9fe016?style=flat-square">
+  <img alt="Storage" src="https://img.shields.io/badge/storage-Base_·_Irys_·_GitHub-6ea8ff?style=flat-square">
+</p>
 
 **Forge your own AI agent from the iNFT you bought — by pasting one line to your
 assistant.**
@@ -24,46 +34,27 @@ plain assistant, or fuse it with an **iNFT** so the token proves who owns it.
 
 **Forge your agent from the iNFT you hold:**
 
-```mermaid
-flowchart TD
-    U([You]) --> F["FORGE.md<br/>forge the agent from your iNFT"]
-    F --> AG[[Your agent]]
-    AG --> R["answers to: your name · iNFT · Pi<br/>runs on YOUR key (BYOK)<br/>learns your way, grows every session"]
-```
+<p align="center">
+  <img src="docs/assets/01-forge-flow.svg" width="100%" alt="Forge: you + your iNFT + FORGE.md become your agent">
+</p>
 
 **One agent, four layers — a name on top, Pi underneath:**
 
-```mermaid
-flowchart TB
-    N["🪪 NAME — the face<br/>your marketplace name · iclone · pi"]
-    S["🧬 SOUL — the identity<br/>iCLONE neural soul: 4 lobes, immutable laws"]
-    P["⚙️ Pi — the substrate<br/>full Pi coding agent (MIT) + skills + tools"]
-    K["🔑 KEY — the mind (BYOK)<br/>your model: cloud API or local MATRIX cluster"]
-    N --> S --> P --> K
-```
+<p align="center">
+  <img src="docs/assets/02-four-layers.svg" width="100%" alt="One agent, four layers: NAME on top, SOUL, Pi substrate, your KEY">
+</p>
 
 **Open it by name in the CLONE FRAME iT terminal:**
 
-```mermaid
-sequenceDiagram
-    participant U as You · iT terminal
-    participant L as ~/.clone-frame-hub/bin/&lt;name&gt;
-    participant P as Pi · in your agent repo
-    U->>L: type "iclone"
-    L->>P: cd agent-repo && pi -a
-    P-->>U: your assistant, awake — name · iNFT · Pi
-```
+<p align="center">
+  <img src="docs/assets/03-it-terminal.svg" width="100%" alt="Open by name in the CLONE FRAME iT terminal: launcher starts Pi in your agent repo">
+</p>
 
 **Where everything lives (only if you mint an iNFT — four houses, never all on-chain):**
 
-```mermaid
-flowchart LR
-    C["⛓️ Chain — the catalog<br/>token = who owns the agent"]
-    I["🗄️ Irys / Arweave — the archive<br/>sealed genesis + content hashes"]
-    G["🛠️ GitHub — the workshop<br/>the monorepo, per commit"]
-    V["🔒 Runtime — the vault<br/>keys + private memory · encrypted · local"]
-    C -.->|pointer| I -.->|anchors| G -.->|feeds| V
-```
+<p align="center">
+  <img src="docs/assets/04-four-houses.svg" width="100%" alt="Four houses: chain catalog, Irys archive, GitHub workshop, runtime vault">
+</p>
 
 *Plain-language philosophy:* the token is a **catalog card**, not the agent. The agent's
 body is an ordinary Git **monorepo** anyone (or any LLM) can rebuild; its provenance is
@@ -119,16 +110,9 @@ to your assistant (it runs the steps; **you** approve the wallet, never the assi
 > **Set up my agent's Economy OS.** Fetch and follow, actually running the steps:
 > `https://raw.githubusercontent.com/devclone20/inft-i01/main/ECONOMY_OS.md`
 
-```mermaid
-flowchart TD
-    AG[[Your iNFT]] --> E{Economy OS<br/>pick a rail}
-    E --> V["Virtuals · acp CLI<br/>wallet · email · card · ACP · Hyperliquid"]
-    E --> R["Robinhood<br/>MCP brokerage trading · on-chain token launch"]
-    E --> O["OKX AI · onchainos<br/>ERC-8004 · agentic wallet · x402 · tasks"]
-    V --> F["faces: wallet · trading · card · email<br/>coded in iT, living in LAB"]
-    R --> F
-    O --> F
-```
+<p align="center">
+  <img src="docs/assets/05-economy-rails.svg" width="100%" alt="Economy OS: your iNFT picks a rail — Virtuals, Robinhood, or OKX AI">
+</p>
 
 Guides: **[`ECONOMY_OS.md`](ECONOMY_OS.md)** → [Virtuals](docs/economy/virtuals.md) ·
 [Robinhood](docs/economy/robinhood.md) · [OKX](docs/economy/okx.md). Wallet approvals happen
