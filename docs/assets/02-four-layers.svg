@@ -28,8 +28,8 @@
     <text x="140" y="96"><tspan fill="#b18bf5" font-weight="bold">NAME — the face</tspan></text>
     <text x="140" y="120" fill="#8b949e">your marketplace name · iclone · pi</text>
 
-    <rect x="150" y="164" width="700" height="74" rx="8" fill="#161b22" stroke="#9fe016" stroke-width="2"/>
-    <text x="170" y="194"><tspan fill="#9fe016" font-weight="bold">SOUL — the identity</tspan></text>
+    <rect x="150" y="164" width="700" height="74" rx="8" fill="#161b22" stroke="#c48b96" stroke-width="2"/>
+    <text x="170" y="194"><tspan fill="#c48b96" font-weight="bold">SOUL — the identity</tspan></text>
     <text x="170" y="218" fill="#8b949e">iCLONE neural soul — four lobes · immutable laws</text>
 
     <rect x="180" y="262" width="640" height="74" rx="8" fill="#161b22" stroke="#6ea8ff" stroke-width="2"/>
