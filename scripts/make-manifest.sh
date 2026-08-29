@@ -14,15 +14,26 @@ else
   FILES=$(find . -type f -not -path './.git/*' -not -path './node_modules/*' -not -name manifest.json | sed 's|^\./||' | sort)
 fi
 
-# A tracked symlink (e.g. .hermes/skills -> ../skills) is content in git too: what git
-# stores is the LINK TARGET, not the tree behind it. Hash that string, so repointing the
-# link at another directory shows up as a manifest mismatch like any other edit.
-hash_of() {
-  if [ -L "$1" ]; then
-    printf 'symlink:%s' "$(readlink "$1")" | shasum -a 256 | awk '{print $1}'
-  else
-    shasum -a 256 "$1" | awk '{print $1}'
-  fi
+hash_of() { shasum -a 256 "$1" | awk '{print $1}'; }
+
+{
+  echo '{'
+  echo '  "manifest_version": 1,'
+  echo "  \"generated\": \"$(date -u +%Y-%m-%dT%H:%M:%SZ)\","
+  echo '  "algorithm": "sha256",'
+  echo '  "repo": "https://github.com/devclone20/inft-i01",'
+  echo '  "note": "Authoritative hashes for a token live on-chain / Irys, not here (see docs/BOOTSTRAP.md). This file is a convenience mirror of the tracked tree.",'
+  echo '  "files": {'
+  first=true
+  while IFS= read -r f; do
+    [ -n "$f" ] && [ -f "$f" ] || continue
+    $first || echo ','
+    first=false
+    printf '    "%s": "%s"' "$f" "$(hash_of "$f")"
+  done <<< "$FILES"
+  echo ''
+  echo '  }'
+  echo '}'
 } > "$SELF"
 
 echo "✓ metadata/manifest.json regenerated ($(python3 -c 'import json;print(len(json.load(open("'"$SELF"'"))["files"]))') file entries)"
