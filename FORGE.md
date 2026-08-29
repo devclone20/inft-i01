@@ -137,19 +137,23 @@ agent is already named, it will not overwrite without confirmation.
 bash scripts/personalize.sh "AGENT NAME HERE"
 ```
 
-Then create the owner profile file from the buyer's Step 1(2) answer and append it to
-the local system prompt (the script untracks `SOUL.md` so the owner's
-profile is **never committed**):
+Then create the owner profile from the buyer's Step 1(2) answer and fold it into the
+prompt the agent actually receives. Hermes injects the project's `AGENTS.md`, and prefers
+an `AGENTS.override.md` beside it — the documented spot for a personal, gitignored
+override. So the profile lands there, and the tracked files are never modified:
 
 - Write the buyer's profile into **`.hermes/owner.local.md`** (gitignored — local only),
   following the shape in `owner/OWNER.example.md`.
-- Run `bash scripts/personalize.sh --apply-owner` to fold it into
-  `SOUL.md` and untrack that file in this repo.
+- Run `bash scripts/personalize.sh --apply-owner`. It regenerates
+  **`AGENTS.override.md`** = `AGENTS.md` + that profile, and gitignores it.
+
+Do **not** put the profile in `SOUL.md`: that file is tracked and public, and Hermes never
+reads it from a repo anyway.
 
 Verify no PII is tracked before any push:
 ```bash
-git check-ignore -v .hermes/owner.local.md SOUL.md   # both must be ignored
-git status --porcelain                                        # owner files must NOT appear
+git check-ignore -v .hermes/owner.local.md AGENTS.override.md   # both must be ignored
+git status --porcelain                                          # owner files must NOT appear
 ```
 
 ---
@@ -181,10 +185,12 @@ one — it limits the blast radius if a web page ever tries to burn credits.
 
 ## Step 6 — Boot and verify
 
-The soul (`SOUL.md`, at the repo root) and the project skills (`.hermes/skills`) load only
-once the project is **trusted**. Trust is granted once, from the repo root, with
-`hermes skills trust "$PWD"`, and it persists. The repo ships a boot helper that does
-this for you:
+The soul rides in **`AGENTS.md`** (plus the local `AGENTS.override.md`): Hermes injects the
+project's AGENTS chain whenever it runs from the repo, with no trust step — so booting from
+the repo root is what brings the identity. The **project skills** (`.hermes/skills`) are the
+one thing that needs **trust**, granted once from the repo root with
+`hermes skills trust "$PWD"` and persisted. The repo ships a boot helper that does this
+for you:
 
 ```bash
 bash scripts/boot.sh              # = hermes chat   (interactive)
@@ -194,8 +200,9 @@ bash scripts/boot.sh -p "In one line, tell me your three names and your vocation
 
 A correct boot answers with the agent's **marketplace name**, that it is an **iNFT**,
 and that it is **Hermes** underneath, with a coding & orchestration vocation. If it doesn't
-mention its name or soul, trust wasn't granted — grant it from the repo root with
-`hermes skills trust "$PWD"`, then boot again with `bash scripts/boot.sh`.
+mention its name or soul, the session is not running from the repo root — `cd` there and
+boot again with `bash scripts/boot.sh`. (If instead the *skills* are missing, that is the
+trust grant: `hermes skills trust "$PWD"` from the repo root.)
 
 ---
 

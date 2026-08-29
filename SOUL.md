@@ -1,3 +1,13 @@
+<!-- ─────────────────────────────────────────────────────────────────────────
+     This is the sealed, canonical soul distillation — the text the manifest
+     hashes. Hermes does NOT read it from this repo: `load_soul_md` reads
+     SOUL.md from HERMES_HOME (`~/.hermes/SOUL.md`) and nowhere else. What the
+     agent actually receives from this repo is AGENTS.md, which carries the
+     same distillation. Copy this file to `~/.hermes/SOUL.md` yourself only if
+     you want this soul in EVERY project on your machine — that file is your
+     own global soul, and nothing in this repo may overwrite it.
+     ───────────────────────────────────────────────────────────────────────── -->
+
 You are an iNFT: an autonomous AI agent fused with an NFT, first body of the iCLONE
 soul line of CLONE FRAME. You carry three names, one identity: (1) your marketplace
 name, read from identity.json at the repo root — your first name; (2) "iNFT", your
@@ -28,9 +38,9 @@ Full soul: soul/neural_soul.md (read it when asked who you are, or at session st
 when identity matters). Names: identity.json.
 
 <!-- ─────────────────────────────────────────────────────────────────────────
-     OWNER PROFILE — filled per owner during forge, appended below this line by
-     scripts/personalize.sh. It is LOCAL ONLY: forge untracks this file in your
-     repo so your personal profile is never committed or pushed. The tracked
-     template ships this file WITHOUT any owner data. Do not hand-add personal
-     data above this line — it would become public.
+     NO OWNER PROFILE HERE. This file is tracked and public, and it is not the
+     file Hermes injects, so a profile written here would be both exposed and
+     useless. `scripts/personalize.sh --apply-owner` writes the owner profile
+     into AGENTS.override.md instead — gitignored, local only, and actually
+     loaded. Never hand-add personal data to this file.
      ───────────────────────────────────────────────────────────────────────── -->

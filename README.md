@@ -134,8 +134,9 @@ FORGE.md             forge the agent from an iNFT you bought
 ECONOMY_OS.md        give the agent an economy — wallet · trade · commerce (3 rails)
 identity.json        the names (marketplace name · iNFT · Hermes) + chains + mint fields
 soul/                neural_soul.md v1.0.0 + four-lobe skeleton + iCLONE v2.1.0 lineage
-SOUL.md              soul distillation Hermes injects (with AGENTS.md) at boot
-.hermes/skills →     symlink to ../skills, so Hermes finds them once trusted
+AGENTS.md            the only project file Hermes injects — carries the soul distillation
+SOUL.md              the same distillation, sealed and hashed; loads only from ~/.hermes/SOUL.md
+.hermes/skills →     symlink to ../skills; `hermes skills trust` is what makes Hermes find them
 owner/               OWNER.example.md — the shape of a per-owner profile (filled locally)
 skills/cmux/         terminal-orchestration skill + 20 recipes (MIT, vendored)
 docs/                INFT_CONCEPT.md · BOOTSTRAP.md · economy/{virtuals,robinhood,okx}.md

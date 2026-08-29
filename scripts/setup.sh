@@ -45,10 +45,11 @@ fi
 
 # ── Verify repo wiring ───────────────────────────────────────────
 say "→ Verifying repo wiring…"
-for f in SOUL.md soul/neural_soul.md identity.json skills/cmux/SKILL.md FORGE.md; do
+for f in AGENTS.md SOUL.md soul/neural_soul.md identity.json skills/cmux/SKILL.md FORGE.md; do
   [ -f "$f" ] && say "  ✓ $f" || { say "  ✗ MISSING: $f"; exit 1; }
 done
-[ -e ".hermes/skills" ] && say "  ✓ .hermes/skills → ../skills (project skills, loaded once trusted)"
+say "    (AGENTS.md is the file Hermes injects — it carries the soul; SOUL.md is the sealed copy)"
+[ -e ".hermes/skills" ] && say "  ✓ .hermes/skills → ../skills (project skills, discovered once trusted)"
 command -v hermes >/dev/null 2>&1 && say "  ✓ hermes $(hermes --version 2>/dev/null || echo installed) ($INSTALL_MODE)"
 
 NAME="$(python3 -c "import json;print(json.load(open('identity.json'))['marketplace_name'])" 2>/dev/null || echo 'iNFT i01')"
@@ -56,5 +57,5 @@ say ""
 say "── Substrate ready. Next:"
 say "   1) Personalize:     bash scripts/personalize.sh \"Your Agent Name\""
 say "   2) Connect a model: hermes model    (you type the key, never the assistant)"
-say "   3) Boot:            bash scripts/boot.sh  (trusts this project, then 'hermes chat')"
+say "   3) Boot:            bash scripts/boot.sh  (from the repo root: trusts the project skills, then 'hermes chat')"
 say "   Current name: \"$NAME\" — it also answers to \"iNFT\" and \"Hermes\"."

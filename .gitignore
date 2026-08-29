@@ -11,8 +11,10 @@ auth.json
 .hermes/trust.json
 
 # ── Per-owner personal data (PII) — LOCAL ONLY, never committed or pushed ────
-# Owner profile written during forge, and any *.local.* the buyer creates.
+# Owner profile written during forge, the personalized project prompt built from it
+# (AGENTS.override.md — what Hermes actually loads), and any *.local.* the buyer creates.
 .hermes/owner.local.md
+AGENTS.override.md
 **/owner.local.md
 *.local
 *.local.*

@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
-# inft-i01 — boot the agent with this project's resources TRUSTED.
-# Hermes auto-injects AGENTS.md and SOUL.md, and discovers project skills under
-# .hermes/skills once the project root is trusted. `hermes skills trust` grants
-# that trust (persisted). Extra args pass through to `hermes chat`.
+# inft-i01 — boot the agent from this repo, with its project skills trusted.
+# Hermes injects the project's AGENTS.md chain (git root → cwd) unconditionally, so the
+# soul carried in AGENTS.md loads with or without this script. What `hermes skills trust`
+# adds — and all it adds — is discovery of the project skills under .hermes/skills; the
+# grant is persisted. The repo-root SOUL.md is not injected by Hermes at all (it reads
+# SOUL.md from ~/.hermes/SOUL.md only). Extra args pass through to `hermes chat`.
 set -euo pipefail
 cd "$(dirname "$0")/.."
 

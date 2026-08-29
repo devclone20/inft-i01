@@ -47,18 +47,20 @@ From the token's metadata (on-chain / Irys), the `agent_bootstrap` block:
 3. **Install the substrate.** Run `scripts/setup.sh` — it installs Hermes with Nous
    Research's official installer (printed before it runs, no sudo) and, optionally, the
    pinned `opensrc` helper with `--ignore-scripts`. Or run those two commands by hand.
-4. **Wire the identity.** The repo already carries it: `.hermes/skills` is a symlink to
-   `skills/`, which Hermes auto-discovers once the project is trusted; `SOUL.md` layers
-   the soul distillation onto Hermes's system prompt; `AGENTS.md` gives project context
-   that loads even before trust. Nothing to configure — being in the repo root IS the
-   config.
+4. **Wire the identity.** The repo already carries it: `AGENTS.md` holds the soul
+   distillation, and Hermes injects the project's AGENTS chain (git root → cwd)
+   unconditionally — no trust, no flag. `.hermes/skills` is a symlink to `skills/`, which
+   Hermes discovers once the project is trusted. The repo-root `SOUL.md` is the sealed
+   copy of that same distillation for hashing; Hermes reads `SOUL.md` from
+   `~/.hermes/SOUL.md` only, so it is never injected from here. Nothing to configure —
+   being in the repo root IS the config.
 5. **Connect a model (BYOK).** The holder sets their provider key themselves —
    `hermes model`, or an env var — **never pasted to the assistant**. Keys live in
    `~/.hermes/auth.json` (0600) or the environment, never in the repo.
-6. **Boot with trust.** Run `scripts/boot.sh` from the repo root — it runs
-   `hermes skills trust "$PWD"` and then `hermes chat`. That trust is what makes
-   `SOUL.md` and `.hermes/skills` load; without it Hermes ignores them. Greet the agent
-   by its marketplace name (see
+6. **Boot from the repo root.** Run `scripts/boot.sh` there — it runs
+   `hermes skills trust "$PWD"` and then `hermes chat`. Running from the root is what
+   loads the soul (via `AGENTS.md`); the trust call adds `.hermes/skills`, and without it
+   Hermes ignores only the skills. Greet the agent by its marketplace name (see
    `identity.json`), by "iNFT", or by "Hermes" — it recognizes all three.
 
 ## What "regenerate the monorepo" means

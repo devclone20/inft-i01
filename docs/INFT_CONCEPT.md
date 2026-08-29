@@ -67,8 +67,10 @@ skills, the Hermes wiring — is shared and identity-agnostic.
 - **Face: the marketplace name.** The name published with the token on OpenSea (or any
   Web3 marketplace) sits on top. The agent answers to that name.
 - **Soul: the CLONE FRAME neural soul.** The iCLONE four-lobe neural soul
-  (`soul/neural_soul.md`) is layered onto Hermes through Hermes's own soul hook
-  (`SOUL.md`, appended when the project is trusted) plus `AGENTS.md`. Same
+  (`soul/neural_soul.md`) is layered onto Hermes through **`AGENTS.md`** — the project
+  file Hermes injects into its system prompt on every run from the repo. (`SOUL.md` at
+  the root is the same distillation sealed for hashing; Hermes's own soul hook reads
+  `~/.hermes/SOUL.md`, never a repo, so it is the owner's global soul and optional.) Same
   brain architecture as every CLONE FRAME soul; the vocation here is **coding &
   orchestration**.
 
