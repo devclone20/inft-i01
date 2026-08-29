@@ -81,8 +81,8 @@ that forges Harnesses.)
 - **Money moves only with the user's confirmation.** Every fund-moving command (fund a job,
   trade, top-up, launch a token) is shown before it runs; the user approves it. Prefer the
   CLI's `--dry-run` / preview first where it exists.
-- **Least privilege.** Dedicated budget-capped wallet; pinned installs; no `sudo`; no
-  `curl | bash`; every command visible. Idempotent — safe to re-run.
+- **Least privilege.** Dedicated budget-capped wallet; the rails' CLIs install pinned
+  from npm; no `sudo`; every command visible before it runs. Idempotent — safe to re-run.
 - **Never on-chain, never committed:** keys, seed phrases, private memory. This repo is
   public; keep it that way.
 

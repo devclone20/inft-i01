@@ -26,9 +26,9 @@
   transaction, never asks for a seed phrase.
 - ❌ **Never asks you to paste your API key into this chat.** You type your key into
   your own terminal, yourself. If a key ever appears in this conversation, rotate it.
-- ❌ Never sends your files anywhere. The only network calls are: the npm registry
-  (to install Hermes), GitHub (to fetch this template), and the model provider **you**
-  choose.
+- ❌ Never sends your files anywhere. The only network calls are: Nous Research's
+  installer host (to install Hermes), the npm registry (only for the optional `opensrc`
+  helper), GitHub (to fetch this template), and the model provider **you** choose.
 
 **You stay in control:** every command is shown before it runs; you can stop anytime;
 nothing here is irreversible.
@@ -46,22 +46,26 @@ This setup needs an assistant that can **run commands on the buyer's computer** 
 it. Verify your own capability, then check the machine:
 
 ```bash
-node -v        # need Node.js ≥ 18
-npm -v
-git --version  # needed to version the agent's repo
+git --version   # needed to version the agent's repo
+curl --version  # needed to fetch the Hermes installer
+python3 -V      # used by this repo's scripts to read and write identity.json
+node -v         # OPTIONAL — only for the `opensrc` helper
 ```
 
 - If **you cannot run shell commands**, stop and tell the buyer: *"I can't set this up
   from here — I need an assistant that runs on your computer. The easiest is Hermes
   itself (`curl -fsSL https://hermes-agent.nousresearch.com/install.sh | bash`) or Claude Code / Gemini CLI /
   Cursor. Install one, then paste the same phrase to it."*
-- If **Node is missing:** macOS → `brew install node`; Windows → install Node from
-  nodejs.org (or use WSL); Linux → use `nvm` (`https://github.com/nvm-sh/nvm`). Then
-  re-run the check. **Never use `sudo` to force installs.**
 - If **git is missing:** macOS → `xcode-select --install`; Windows → git-scm.com;
   Linux → your package manager.
+- If **curl or python3 is missing:** macOS ships both (`xcode-select --install` covers
+  them); Windows → use WSL; Linux → your package manager. **Never use `sudo` to force
+  installs.**
+- **Node is optional.** Hermes is not an npm package — it comes from Nous Research's own
+  installer. Node/npm are used only for the optional `opensrc` source-reader; skip them
+  and everything else still works.
 
-Do not proceed until all three pass.
+Do not proceed until git, curl and python3 pass.
 
 ---
 
@@ -166,8 +170,8 @@ git status --porcelain                                        # owner files must
   export ANTHROPIC_API_KEY=...   # buyer runs this themselves; never paste the key to the assistant
   ```
 
-Ask the buyer **which provider** their key is for and pin the matching model (see
-`scripts/setup.sh` output). Get a key at: Anthropic `console.anthropic.com`, OpenAI
+Ask the buyer **which provider** their key is for and pin the matching model with
+`hermes model`. Get a key at: Anthropic `console.anthropic.com`, OpenAI
 `platform.openai.com`, Google `aistudio.google.com`, OpenRouter `openrouter.ai`.
 
 **Recommendation:** use a **dedicated, budget-capped key** for the agent, not your main
@@ -177,9 +181,10 @@ one — it limits the blast radius if a web page ever tries to burn credits.
 
 ## Step 6 — Boot and verify
 
-The soul + skills live under `.hermes/`, which Hermes only loads for **trusted** projects. In
-headless/non-interactive runs you must pass `-a` (approve/trust) or they are silently
-ignored. The repo ships a boot helper that does this:
+The soul (`SOUL.md`, at the repo root) and the project skills (`.hermes/skills`) load only
+once the project is **trusted**. Trust is granted once, from the repo root, with
+`hermes skills trust "$PWD"`, and it persists. The repo ships a boot helper that does
+this for you:
 
 ```bash
 bash scripts/boot.sh              # = hermes chat   (interactive)

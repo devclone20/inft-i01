@@ -101,7 +101,7 @@ The full, self-contained procedure is [`FORGE.md`](FORGE.md).
 
 - A **Hermes Agent** ([hermes-agent.nousresearch.com](https://hermes-agent.nousresearch.com), MIT) — a world-class, extensible
   coding & orchestration engine — running under your agent's name. Any Hermes-ecosystem
-  skill or extension installs natively.
+  skill installs natively.
 - The **iCLONE neural soul** — a four-lobe identity (Will · Senses · Memory · Vision),
   vocation: **coding & orchestration**, with immutable security laws.
 - The **cmux** skill (terminal & multi-agent orchestration, 20 recipes) and **opensrc**

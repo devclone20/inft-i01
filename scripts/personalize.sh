@@ -45,29 +45,32 @@ apply_owner() {
 set_name() {
   local newname="$1" force="${2:-}"
   local current
-  current="$(node -p "require('./identity.json').marketplace_name" 2>/dev/null || echo "")"
+  current="$(python3 -c "import json;print(json.load(open('identity.json'))['marketplace_name'])" 2>/dev/null || echo "")"
 
   if [ "$current" != "$PLACEHOLDER" ] && [ -n "$current" ] && [ "$force" != "--force" ]; then
     say "✓ Already personalized as \"$current\" (idempotent; pass --force to change)."
     return 0
   fi
 
-  node -e '
-    const fs=require("fs"), p="./identity.json";
-    const j=JSON.parse(fs.readFileSync(p,"utf8"));
-    j.marketplace_name=process.argv[1];
-    delete j.marketplace_name_note;
-    fs.writeFileSync(p, JSON.stringify(j,null,2)+"\n");
-  ' "$newname"
+  python3 -c '
+import json, sys
+p = "identity.json"
+j = json.load(open(p))
+j["marketplace_name"] = sys.argv[1]
+j.pop("marketplace_name_note", None)
+open(p, "w").write(json.dumps(j, indent=2) + "\n")
+' "$newname"
   say "✓ identity.json marketplace_name → \"$newname\""
 
   # Reflect the name in the metadata template (name field only; leave <...> mint fields).
-  node -e '
-    const fs=require("fs"), p="./metadata/metadata.template.json";
-    if(fs.existsSync(p)){const j=JSON.parse(fs.readFileSync(p,"utf8"));
-      j.name=process.argv[1];
-      fs.writeFileSync(p, JSON.stringify(j,null,2)+"\n");}
-  ' "$newname" 2>/dev/null || true
+  python3 -c '
+import json, os, sys
+p = "metadata/metadata.template.json"
+if os.path.exists(p):
+    j = json.load(open(p))
+    j["name"] = sys.argv[1]
+    open(p, "w").write(json.dumps(j, indent=2) + "\n")
+' "$newname" 2>/dev/null || true
 
   [ -x scripts/make-manifest.sh ] && bash scripts/make-manifest.sh >/dev/null && say "✓ manifest regenerated"
   say "  Your agent answers to \"$newname\", \"iNFT\", and \"Hermes\"."

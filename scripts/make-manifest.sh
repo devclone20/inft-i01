@@ -36,5 +36,5 @@ hash_of() { shasum -a 256 "$1" | awk '{print $1}'; }
   echo '}'
 } > "$SELF"
 
-echo "✓ metadata/manifest.json regenerated ($(grep -c '": "' "$SELF") file entries)"
+echo "✓ metadata/manifest.json regenerated ($(python3 -c 'import json;print(len(json.load(open("'"$SELF"'"))["files"]))') file entries)"
 echo "  soul/neural_soul.md → $(hash_of soul/neural_soul.md)"

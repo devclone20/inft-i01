@@ -15,7 +15,7 @@ REPO="$(pwd)"
 
 # ── resolve the command name (slug of the agent's name) ──────────────────────────────
 RAW="${1:-}"
-[ -z "$RAW" ] && RAW="$(node -p "require('./identity.json').marketplace_name" 2>/dev/null || echo iclone)"
+[ -z "$RAW" ] && RAW="$(python3 -c "import json;print(json.load(open('identity.json'))['marketplace_name'])" 2>/dev/null || echo iclone)"
 slug() { printf '%s' "$1" | tr '[:upper:] ' '[:lower:]-' | tr -cd 'a-z0-9-' | sed 's/-\{2,\}/-/g; s/^-//; s/-$//'; }
 CMD="$(slug "$RAW")"; [ -z "$CMD" ] && CMD="iclone"
 

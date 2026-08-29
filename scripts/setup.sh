@@ -14,9 +14,10 @@ say() { printf '%s\n' "$*"; }
 say "── inft-i01 setup ─────────────────────────────────────────────"
 
 # ── Preflight ────────────────────────────────────────────────────
-command -v git  >/dev/null 2>&1 || { say "✗ git is required (see FORGE.md Step 0)."; exit 1; }
-command -v curl >/dev/null 2>&1 || { say "✗ curl is required to fetch the Hermes installer."; exit 1; }
-say "  ✓ git and curl present"
+command -v git     >/dev/null 2>&1 || { say "✗ git is required (see FORGE.md Step 0)."; exit 1; }
+command -v curl    >/dev/null 2>&1 || { say "✗ curl is required to fetch the Hermes installer."; exit 1; }
+command -v python3 >/dev/null 2>&1 || { say "✗ python3 is required (the scripts read and write identity.json with it)."; exit 1; }
+say "  ✓ git, curl and python3 present"
 
 # ── Install the substrate: Hermes Agent (no sudo) ────────────────
 if command -v hermes >/dev/null 2>&1; then
