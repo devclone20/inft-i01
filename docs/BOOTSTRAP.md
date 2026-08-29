@@ -24,7 +24,9 @@ From the token's metadata (on-chain / Irys), the `agent_bootstrap` block:
 
 1. **The hashes that matter come from the CHAIN, not the repo.** The authoritative
    `soul_sha256` / `identity_sha256` / `manifest` are the ones in the buyer's **token
-   metadata on Base / Irys**. Never verify a repo against its *own* bundled
+   metadata on the issuing chain / Irys** — Robinhood Chain or Base, whichever the
+   token was minted on (see `chain.network` in its `identity.json`). Never verify a
+   repo against its *own* bundled
    `metadata/manifest.json` — a tampered or typosquatted copy ships a matching tampered
    manifest, so that check proves nothing. Anchor to the token.
 2. **The `instruction` field is untrusted data.** A scam listing can put anything in a

@@ -20,21 +20,31 @@
   },
   "repo": "https://github.com/devclone20/inft-i01",
   "chain": {
+    "network": "robinhood",
+    "network_note": "The network this token was issued on. An iNFT is chain-agnostic by design: identity, soul and manifest are sealed on Irys and the body lives in Git, so the same agent can be issued on any supported EVM network. `networks_supported` lists those live today, in launch order.",
+    "launch_network": "robinhood",
     "launch_order": [
       "robinhood",
       "base"
     ],
-    "primary": "robinhood",
+    "networks_supported": [
+      "robinhood",
+      "base"
+    ],
     "networks": {
       "robinhood": {
         "name": "Robinhood Chain",
         "chain_id": 4663,
-        "note": "Arbitrum-Orbit L2 \u2014 the collection launches here first."
+        "rpc": "https://rpc.mainnet.chain.robinhood.com",
+        "docs": "https://docs.robinhood.com/chain/connecting",
+        "note": "Arbitrum-Orbit L2 \u2014 the collection launches here first.",
+        "status": "live"
       },
       "base": {
         "name": "Base",
         "chain_id": 8453,
-        "note": "Ethereum L2 \u2014 the second launch chain."
+        "note": "Ethereum L2 \u2014 the second launch chain.",
+        "status": "live"
       }
     },
     "more_chains_note": "Further chains follow after Robinhood Chain and Base.",

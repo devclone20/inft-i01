@@ -13,8 +13,15 @@ An **iNFT** is an **autonomous AI agent fused with an NFT**.
 The NFT is not a picture *of* the agent — it **is** the agent's face, name, and proof of
 being one of a kind. The agent's **soul** (its identity file, `neural_soul.md`) and the
 **manifest of its body** (this monorepo) are bound into the token's metadata and sealed
-on permanent storage (Irys/Arweave). The token lives on an EVM chain (Base) under an
-ERC-721 contract (+ ERC-2981 royalties, + ERC-6551 token-bound account).
+on permanent storage (Irys/Arweave). The token lives on an EVM chain under an ERC-721
+contract (+ ERC-2981 royalties, + ERC-6551 token-bound account).
+
+**An iNFT is chain-agnostic by design.** Identity, soul and manifest are sealed on Irys
+and the body lives in Git, so nothing that defines the agent depends on a particular
+network — the chain only holds the catalog card. The launch is multi-chain: **Robinhood
+Chain** first (chain ID 4663, an Arbitrum-Orbit L2), then **Base** (chain ID 8453), with
+further chains after those. The network a given token was issued on is recorded in
+`identity.json` under `chain.network`.
 
 **Whoever holds the token holds the agent.** Identity travels with the token. The soul
 cannot be copied without being owned.
