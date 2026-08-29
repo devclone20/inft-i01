@@ -1,11 +1,12 @@
 {
   "manifest_version": 1,
-  "generated": "2026-08-29T22:48:44Z",
+  "generated": "2026-08-29T23:14:28Z",
   "algorithm": "sha256",
   "repo": "https://github.com/devclone20/inft-i01",
   "note": "Authoritative hashes for a token live on-chain / Irys, not here (see docs/BOOTSTRAP.md). This file is a convenience mirror of the tracked tree.",
   "files": {
     ".gitignore": "0f4b942284a99d4f7c38973cdc833434b3a67afb0cea22acd7c8ff048f6c30e3",
+    ".hermes/skills": "9f4d72e14037507436538710593de3f5b45fdb45a6d02546b6f2093dd401699d",
     "AGENTS.md": "1de46d418aac7cd511223ccb5d2ac5e31424e908150c7a818e717811d6e6641d",
     "ECONOMY_OS.md": "af5e77f6f3e60c2ce00c6c8f9766ae4e98193f0c594054382d78c75369c3d37a",
     "FORGE.md": "e043d24898b8af39fb1cf1404b39eafcd1ceaa6e97c2d03b3d3c4598055bb898",
@@ -29,7 +30,7 @@
     "package.json": "1a647adbe25276c3a5527edde17c59d243aa51b860da0a14fbeabf7871051411",
     "scripts/boot.sh": "dabd78d00115dcf2dbc056c6fd5fdc002bf3367a682a4d064e7d67eb867688cd",
     "scripts/install-command.sh": "5f07391d41166f1246a0caca107eed90b0c863ebd416fc86aeb4c3f5b4960295",
-    "scripts/make-manifest.sh": "563565fc809fdcc196867330eab656befa5e1c4855b2ee4a88cd92afa831ce7a",
+    "scripts/make-manifest.sh": "af4ccb35e52b55d40358e988cde1c8977d6d826e917efbda00de579674981f4e",
     "scripts/personalize.sh": "7ceae02db3ed9e979350df48eacedc0476006b84409f8db38d110dbb6890de35",
     "scripts/setup.sh": "d4b37bb61208f41099793759d7a9413f23acb6db70dcb19bbc6097276592360f",
     "skills/README.md": "dd741a62022c32cca44c1324b9d89dc668b5fa841a474cb6665f8bcc1198b52c",
