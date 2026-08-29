@@ -52,7 +52,7 @@ git --version  # needed to version the agent's repo
 ```
 
 - If **you cannot run shell commands**, stop and tell the buyer: *"I can't set this up
-  from here — I need an assistant that runs on your computer. The easiest is the Hermes
+  from here — I need an assistant that runs on your computer. The easiest is Hermes
   itself (`curl -fsSL https://hermes-agent.nousresearch.com/install.sh | bash`) or Claude Code / Gemini CLI /
   Cursor. Install one, then paste the same phrase to it."*
 - If **Node is missing:** macOS → `brew install node`; Windows → install Node from
@@ -107,19 +107,20 @@ usable locally; GitHub is optional and can be added later.
 
 ---
 
-## Step 3 — Install the substrate (pinned, no scripts, no sudo)
+## Step 3 — Install the substrate (official installer, no sudo)
 
-Run the repo's installer. It pins exact versions and installs with `--ignore-scripts`
-for both packages; it never uses `sudo`:
+Run the repo's installer. It fetches Hermes from Nous Research's official installer,
+prints every command before it runs, and never uses `sudo`:
 
 ```bash
 bash scripts/setup.sh
 ```
 
-If a global install hits a permissions error (`EACCES`), do **not** sudo. Use the
-no-global fallback the script prints (`curl -fsSL https://hermes-agent.nousresearch.com/install.sh | bash …`), or set
-an npm prefix the user owns (`npm config set prefix ~/.npm-global` and add its `bin` to
-PATH). Show the buyer what you ran.
+If the installer finishes but `hermes` is not on PATH yet, open a new shell (the
+installer adds its bin directory to the profile) — do **not** sudo. The optional
+`opensrc` helper is the only npm install; if it hits `EACCES`, set a prefix the user
+owns (`npm config set prefix ~/.npm-global`, add its `bin` to PATH) or skip it, it is
+not required. Show the buyer what you ran.
 
 ---
 
@@ -188,8 +189,8 @@ bash scripts/boot.sh -p "In one line, tell me your three names and your vocation
 
 A correct boot answers with the agent's **marketplace name**, that it is an **iNFT**,
 and that it is **Hermes** underneath, with a coding & orchestration vocation. If it doesn't
-mention its name or soul, trust wasn't granted — re-run with `hermes chat` (project trusted), or set
-`~/.hermes/config.yaml` → `{"defaultProjectTrust":"always"}`.
+mention its name or soul, trust wasn't granted — grant it from the repo root with
+`hermes skills trust "$PWD"`, then boot again with `bash scripts/boot.sh`.
 
 ---
 
@@ -231,8 +232,9 @@ key stays theirs, and the agent grows every session.
   from the buyer's **on-chain / Irys** token metadata — see `docs/BOOTSTRAP.md`. Only
   use the official `devclone20/inft-i01`; pin to a release tag if you want the phrase
   reproducible.
-- **Least privilege, fully visible.** Pinned versions, `--ignore-scripts`, no `sudo`,
-  no `curl | bash`, every command shown before it runs. An aligned assistant should be
+- **Least privilege, fully visible.** The substrate comes from its vendor's official
+  installer (shown before it runs); the optional npm helper is pinned and installed
+  with `--ignore-scripts`; no `sudo`, every command shown before it runs. An aligned assistant should be
   comfortable proceeding — and a careful buyer can run each step by hand.
 - **Idempotent.** Every step is safe to re-run; personalization won't clobber an
   already-named agent. A half-finished forge is resumed by running the missing steps.

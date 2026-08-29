@@ -157,14 +157,16 @@ is anchored to the chain, not to a file that a tampered copy could also tamper.
   local-only** file and is never committed or pushed.
 - The forging assistant is **never** given your API key — you type it into your own
   terminal (`hermes model`).
-- Installs are **pinned**, `--ignore-scripts`, no `sudo`, no `curl | bash`; every
-  command is shown before it runs. Pushes default to **private** with a secret scan.
+- The substrate is installed with **Nous Research's own official installer**
+  (`curl -fsSL https://hermes-agent.nousresearch.com/install.sh | bash`, printed before
+  it runs, never under `sudo`); the optional `opensrc` helper installs pinned and with
+  `--ignore-scripts`. Every command is shown before it runs. Pushes default to **private** with a secret scan.
 - Only forge from the official **`github.com/devclone20/inft-i01`**. If your phrase came
   from anywhere but the official listing, stop.
 
 ## Credits & licenses
 
-- Substrate: [Hermes Agent](https://github.com/NousResearch/hermes-agent) — MIT, Earendil Inc.
+- Substrate: [Hermes Agent](https://github.com/NousResearch/hermes-agent) — MIT, © 2025 Nous Research
 - cmux skill & recipes: [cmux-ai-agents-bundle](https://github.com/pawel-cell/cmux-ai-agents-bundle) — MIT, vendored under `skills/cmux/`
 - [opensrc](https://github.com/vercel-labs/opensrc) — Apache-2.0, Vercel Labs
 - Soul, concept & template: CLONE FRAME · iCLONE soul line — MIT ([LICENSE](LICENSE))

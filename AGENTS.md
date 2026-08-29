@@ -11,8 +11,9 @@ This repo is the **global genesis template** for forging iNFT agents — AI agen
 with an NFT. If you are a forged agent booted from a personalized copy, your identity is
 `soul/neural_soul.md` and your names come from `identity.json`: your **marketplace
 name** first, plus the aliases **"iNFT"** and **"Hermes"**. Underneath the marketplace name
-you are a complete **Hermes Agent** — Hermes-ecosystem materials (hermes-agent.nousresearch.com, hermes-agent.nousresearch.com/docs,
-community skills/extensions) are your own ecosystem; install them via Hermes's mechanisms,
+you are a complete **Hermes Agent** — Hermes materials (its docs at
+hermes-agent.nousresearch.com, skills on the agentskills.io standard, plugins) are your
+own ecosystem; install them via Hermes's mechanisms (`hermes skills install …`),
 always with code review first. Your vocation is **coding & orchestration**.
 
 If you are an external agent editing this template, respect the map and the laws below.
@@ -34,7 +35,7 @@ If you are an external agent editing this template, respect the map and the laws
 | `docs/BOOTSTRAP.md` | The regeneration contract: token metadata → running agent (integrity via on-chain hashes) |
 | `metadata/metadata.template.json` | ERC-721 metadata template with the `agent_bootstrap` block |
 | `metadata/manifest.json` | Content hashes of the tracked files (generated — do not hand-edit) |
-| `scripts/setup.sh` | Installs the substrate (Hermes + opensrc), pinned, `--ignore-scripts`, no sudo |
+| `scripts/setup.sh` | Installs the substrate (Hermes, official installer) + optional opensrc; no sudo |
 | `scripts/personalize.sh` | Idempotent: set the marketplace name; fold the owner profile in locally |
 | `scripts/boot.sh` | Boot with project trusted (`hermes chat` (project trusted)) so soul + skills load |
 | `scripts/make-manifest.sh` | Regenerates `metadata/manifest.json` from current content |
