@@ -10,7 +10,7 @@
 >
 > This is a sibling of [`FORGE.md`](FORGE.md) (forge the agent) — that gives the agent a
 > **body and a soul**; this gives it an **economy**. Do the forge first if the user hasn't — the agent
-> that runs these CLIs is their Pi iNFT.
+> that runs these CLIs is their Hermes iNFT.
 
 ---
 
@@ -19,7 +19,7 @@
 One prompt turns the agent you already run into a **full economic actor**: a wallet on
 chain, an inbox for logins and receipts, a spending card, tradeable presence, and a
 marketplace to hire others or sell its own work. It earns, spends, trades, and settles
-deals — no rebuild, no SDK glue. Your Pi iNFT **runs the CLI itself**; you (the assistant)
+deals — no rebuild, no SDK glue. Your Hermes iNFT **runs the CLI itself**; you (the assistant)
 just drive it, command by command, and the user approves anything that moves money.
 
 ## Three rails — pick one (or run several)
@@ -40,7 +40,7 @@ a **wallet approval** (which the user does themselves).
 
 1. **The agent exists.** If not, run [`FORGE.md`](FORGE.md)
    first — the economy attaches to that agent's repo.
-2. **BYOK model key** — the agent thinks on the user's own model (`pi` → `/login`). Never
+2. **BYOK model key** — the agent thinks on the user's own model (`hermes model`). Never
    the assistant's.
 3. **A funding wallet the USER controls.** Every rail signs from a wallet. The user connects
    and approves it **in their own wallet app or terminal** — you never see the key. Use a

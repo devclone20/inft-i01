@@ -7,20 +7,20 @@ node_modules/
 *.key
 *.pem
 auth.json
-.pi/auth.json
-.pi/trust.json
+.hermes/auth.json
+.hermes/trust.json
 
 # ── Per-owner personal data (PII) — LOCAL ONLY, never committed or pushed ────
 # Owner profile written during forge, and any *.local.* the buyer creates.
-.pi/owner.local.md
+.hermes/owner.local.md
 **/owner.local.md
 *.local
 *.local.*
 
-# ── Pi runtime state ────────────────────────────────────────────────────────
-.pi/sessions/
-.pi/npm/
-.pi/git/
+# ── Hermes runtime state ────────────────────────────────────────────────────────
+.hermes/sessions/
+.hermes/npm/
+.hermes/git/
 *.log
 
 # ── OS noise ────────────────────────────────────────────────────────────────

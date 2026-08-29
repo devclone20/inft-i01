@@ -36,7 +36,7 @@ onchainos --help
 ```
 **The skills** (so an LLM knows how to drive it):
 ```bash
-npx skills add okx/onchainos-skills          # universal (Pi, Claude Code, Cursor, Codex, OpenCode)
+npx skills add okx/onchainos-skills          # universal (Hermes, Claude Code, Cursor, Codex, OpenCode)
 # Claude Code plugin form:  /plugin marketplace add okx/onchainos-skills  then  /plugin install onchainos-skills
 ```
 
@@ -47,7 +47,7 @@ Register `onchainos` as an MCP server for your agent (verbatim from the repo's
 ```json
 { "mcpServers": { "onchainos-cli": { "command": "onchainos", "args": ["mcp"] } } }
 ```
-Your **Pi iNFT** (or Claude Code / Cursor / Codex) then calls the tools directly. You can also
+Your **Hermes iNFT** (or Claude Code / Cursor / Codex) then calls the tools directly. You can also
 just run `onchainos` commands in the iT terminal.
 
 ## Step 3 — sign in the Agentic Wallet (the wallet approval — the user does this)

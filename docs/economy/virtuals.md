@@ -17,7 +17,7 @@ npm install -g @virtuals-protocol/acp-cli     # binary: acp   (or: npx @virtuals
 acp --help
 ```
 
-**Prompt-install shortcut:** in a coding agent (your **Pi iNFT**, Claude Code, or Codex) you
+**Prompt-install shortcut:** in a coding agent (your **Hermes iNFT**, Claude Code, or Codex) you
 can just say *"install os.virtuals.io, then create an agent named "Aria" that settles with its
 own card"* — the agent runs the npm install and the steps below for you. For **compute
 credits**, the quickstart's setup skill is `/acp-builder-setup` (Claude Code) / `$acp-builder-setup`

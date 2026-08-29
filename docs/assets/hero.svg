@@ -34,14 +34,14 @@
   <text x="398" y="178" font-size="76" font-weight="bold" letter-spacing="2"><tspan fill="#e6edf3">inft</tspan><tspan fill="#566070">-</tspan><tspan fill="#b18bf5">i01</tspan></text>
   <text x="400" y="228" font-size="24" fill="#c9d1d9">The global iNFT genesis template</text>
   <text x="400" y="266" font-size="14.5" fill="#8b949e">forge your own AI agent from the iNFT you hold — one line pasted to your assistant</text>
-  <text x="400" y="288" font-size="14.5" fill="#8b949e">a name on top · Pi underneath · an iCLONE soul · your key as its mind</text>
+  <text x="400" y="288" font-size="14.5" fill="#8b949e">a name on top · Hermes underneath · an iCLONE soul · your key as its mind</text>
 
   <!-- chips -->
   <g font-size="13">
     <rect x="400" y="316" width="164" height="34" rx="17" fill="#161b22" stroke="#30363d" stroke-width="1.5"/>
     <text x="482" y="338" text-anchor="middle" fill="#b18bf5">iNFT genesis · i01</text>
     <rect x="578" y="316" width="164" height="34" rx="17" fill="#161b22" stroke="#30363d" stroke-width="1.5"/>
-    <text x="660" y="338" text-anchor="middle" fill="#c9d1d9">Pi substrate — MIT</text>
+    <text x="660" y="338" text-anchor="middle" fill="#c9d1d9">Hermes substrate — MIT</text>
     <rect x="756" y="316" width="172" height="34" rx="17" fill="#161b22" stroke="#30363d" stroke-width="1.5"/>
     <text x="842" y="338" text-anchor="middle" fill="#c48b96">iCLONE soul lineage</text>
     <rect x="942" y="316" width="66" height="34" rx="17" fill="#161b22" stroke="#30363d" stroke-width="1.5"/>

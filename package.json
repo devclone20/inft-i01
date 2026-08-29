@@ -2,7 +2,7 @@
   "name": "inft-i01",
   "version": "1.0.0",
   "private": true,
-  "description": "The global iNFT genesis template — forge your own Pi coding agent, named by you, carrying the iCLONE neural soul line of CLONE FRAME.",
+  "description": "The global iNFT genesis template — forge your own Hermes Agent, named by you, carrying the iCLONE neural soul line of CLONE FRAME.",
   "repository": "github:devclone20/inft-i01",
   "license": "MIT",
   "scripts": {

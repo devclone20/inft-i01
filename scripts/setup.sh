@@ -1,67 +1,59 @@
 #!/usr/bin/env bash
-# inft-i01 — substrate setup. Installs the Pi coding agent + opensrc at PINNED
-# versions, with --ignore-scripts for BOTH, and never uses sudo. Prints every
-# command before it runs. Safe to re-run (installs are additive/idempotent).
+# inft-i01 — substrate setup. Installs the Hermes Agent (Nous Research, MIT) with
+# its official installer, verifies this repo's wiring, and never uses sudo.
+# Prints every command before it runs. Safe to re-run (installs are idempotent).
 set -euo pipefail
 cd "$(dirname "$0")/.."
 
-# Pinned by default; override with env if a newer stable is desired.
-PI_VERSION="${PI_VERSION:-0.80.10}"
+HERMES_INSTALL_URL="${HERMES_INSTALL_URL:-https://hermes-agent.nousresearch.com/install.sh}"
 OPENSRC_VERSION="${OPENSRC_VERSION:-0.7.3}"
-PI_PKG="@earendil-works/pi-coding-agent@${PI_VERSION}"
 OPENSRC_PKG="opensrc@${OPENSRC_VERSION}"
 
 say() { printf '%s\n' "$*"; }
-run() { say "  \$ $*"; "$@"; }
 
 say "── inft-i01 setup ─────────────────────────────────────────────"
 
 # ── Preflight ────────────────────────────────────────────────────
-if ! command -v node >/dev/null 2>&1; then
-  say "✗ Node.js (≥18) is required and was not found."
-  case "$(uname -s)" in
-    Darwin) say "  macOS:  brew install node" ;;
-    Linux)  say "  Linux:  install nvm → https://github.com/nvm-sh/nvm , then: nvm install --lts" ;;
-    *)      say "  Install Node from https://nodejs.org (Windows: the .msi, or use WSL)" ;;
-  esac
-  exit 1
-fi
-NODE_MAJOR="$(node -p 'process.versions.node.split(".")[0]')"
-[ "$NODE_MAJOR" -ge 18 ] || { say "✗ Node ≥18 required (found $(node -v)). Upgrade Node."; exit 1; }
-command -v git >/dev/null 2>&1 || { say "✗ git is required (see FORGE.md Step 0)."; exit 1; }
-say "  ✓ node $(node -v), npm $(npm -v), git present"
+command -v git  >/dev/null 2>&1 || { say "✗ git is required (see FORGE.md Step 0)."; exit 1; }
+command -v curl >/dev/null 2>&1 || { say "✗ curl is required to fetch the Hermes installer."; exit 1; }
+say "  ✓ git and curl present"
 
-# ── Install substrate (pinned, no scripts, no sudo) ──────────────
-say "→ Installing Pi coding agent + opensrc (pinned, --ignore-scripts, no sudo)…"
-if npm install -g --ignore-scripts "$PI_PKG" "$OPENSRC_PKG" 2>/dev/null; then
-  say "  ✓ installed globally: $PI_PKG , $OPENSRC_PKG"
-  INSTALL_MODE=global
+# ── Install the substrate: Hermes Agent (no sudo) ────────────────
+if command -v hermes >/dev/null 2>&1; then
+  say "  ✓ hermes already installed ($(hermes --version 2>/dev/null || echo present))"
+  INSTALL_MODE=present
 else
-  say "  ! global install failed (likely EACCES — we will NOT sudo)."
-  say "  → Falling back to a user-owned npm prefix (~/.npm-global)…"
-  npm config set prefix "$HOME/.npm-global"
-  run npm install -g --ignore-scripts "$PI_PKG" "$OPENSRC_PKG"
-  case ":$PATH:" in
-    *":$HOME/.npm-global/bin:"*) : ;;
-    *) say "  ⚠ Add this to your shell profile so 'pi' is found:"
-       say "      export PATH=\"\$HOME/.npm-global/bin:\$PATH\"" ;;
-  esac
-  INSTALL_MODE=user-prefix
+  say "→ Installing the Hermes Agent (Nous Research, MIT)…"
+  say "  \$ curl -fsSL $HERMES_INSTALL_URL | bash"
+  curl -fsSL "$HERMES_INSTALL_URL" | bash
+  INSTALL_MODE=installed
+  command -v hermes >/dev/null 2>&1 || {
+    say "  ⚠ 'hermes' is not on PATH yet — open a new shell, or add the installer's"
+    say "    bin directory to PATH, then re-run this script."
+  }
 fi
-say "  (No global permission? You can also run Pi ad-hoc: npx $PI_PKG)"
 
-# ── Verify wiring ────────────────────────────────────────────────
+# opensrc is an independent helper (read real dependency source before vendoring).
+if command -v npm >/dev/null 2>&1; then
+  if npm install -g --ignore-scripts "$OPENSRC_PKG" >/dev/null 2>&1; then
+    say "  ✓ opensrc installed"
+  else
+    say "  ! opensrc skipped (optional helper; needs a writable npm prefix)"
+  fi
+fi
+
+# ── Verify repo wiring ───────────────────────────────────────────
 say "→ Verifying repo wiring…"
-for f in .pi/settings.json soul/neural_soul.md identity.json skills/cmux/SKILL.md FORGE.md; do
+for f in SOUL.md soul/neural_soul.md identity.json skills/cmux/SKILL.md FORGE.md; do
   [ -f "$f" ] && say "  ✓ $f" || { say "  ✗ MISSING: $f"; exit 1; }
 done
-command -v pi      >/dev/null 2>&1 && say "  ✓ pi $(pi --version 2>/dev/null || echo installed) ($INSTALL_MODE)"
-command -v opensrc >/dev/null 2>&1 && say "  ✓ opensrc installed"
+[ -e ".hermes/skills" ] && say "  ✓ .hermes/skills → ../skills (project skills, loaded once trusted)"
+command -v hermes >/dev/null 2>&1 && say "  ✓ hermes $(hermes --version 2>/dev/null || echo installed) ($INSTALL_MODE)"
 
-NAME="$(node -p "require('./identity.json').marketplace_name" 2>/dev/null || echo 'iNFT i01')"
+NAME="$(python3 -c "import json;print(json.load(open('identity.json'))['marketplace_name'])" 2>/dev/null || echo 'iNFT i01')"
 say ""
 say "── Substrate ready. Next:"
-say "   1) Personalize:  bash scripts/personalize.sh \"Your Agent Name\""
-say "   2) Connect key:  run 'pi' then '/login' (you type the key, never the assistant)"
-say "   3) Boot:         bash scripts/boot.sh    (= pi -a, trusts this project's soul+skills)"
-say "   Current name: \"$NAME\" — it also answers to \"iNFT\" and \"Pi\"."
+say "   1) Personalize:     bash scripts/personalize.sh \"Your Agent Name\""
+say "   2) Connect a model: hermes model    (you type the key, never the assistant)"
+say "   3) Boot:            bash scripts/boot.sh  (trusts this project, then 'hermes chat')"
+say "   Current name: \"$NAME\" — it also answers to \"iNFT\" and \"Hermes\"."

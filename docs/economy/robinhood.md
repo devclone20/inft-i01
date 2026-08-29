@@ -27,7 +27,7 @@ not control or audit the agent.
 
 **Requirements:** a US Robinhood **individual investing account in good standing**, and a
 **desktop** (account opening + auth are desktop-only). The agent is **any MCP-capable
-client** — your Pi iNFT, Claude Code, Codex, Cursor, ChatGPT (dev mode), etc. You do **not**
+client** — your Hermes iNFT, Claude Code, Codex, Cursor, ChatGPT (dev mode), etc. You do **not**
 build a Robinhood client.
 
 **The one endpoint (same for every client):**
@@ -44,8 +44,8 @@ claude mcp add robinhood-trading --transport http https://agent.robinhood.com/mc
 # Codex CLI:
 codex mcp add robinhood-trading --url https://agent.robinhood.com/mcp/trading
 ```
-For **Pi** (your iNFT), add the MCP server the way Pi adds one (`pi` supports MCP servers —
-check `pi --help` / the Pi docs for the exact `pi` MCP flag; the URL and transport above are
+For **Hermes** (your iNFT), add the MCP server with Hermes's own MCP manager
+(`hermes mcp --help` shows the exact subcommand; the URL and transport above are
 what you register). Claude Desktop / ChatGPT / Cursor / Grok: add a **custom / Streamable-HTTP
 MCP connector** pointing at the same URL (each app's Settings → Connectors/MCP).
 

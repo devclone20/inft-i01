@@ -5,9 +5,10 @@
 <p align="center">
   <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-b18bf5?style=flat-square"></a>
   <img alt="Template" src="https://img.shields.io/badge/template-use_this_template-e6edf3?style=flat-square">
-  <img alt="Substrate: Pi coding agent" src="https://img.shields.io/badge/substrate-Pi_coding_agent-ff3b30?style=flat-square">
+  <img alt="Substrate: Hermes Agent" src="https://img.shields.io/badge/substrate-Hermes_Agent-ff3b30?style=flat-square">
   <img alt="Soul: iCLONE lineage" src="https://img.shields.io/badge/soul-iCLONE_lineage-9fe016?style=flat-square">
-  <img alt="Storage" src="https://img.shields.io/badge/storage-Base_·_Irys_·_GitHub-6ea8ff?style=flat-square">
+  <img alt="Chains" src="https://img.shields.io/badge/chains-Robinhood_·_Base-6ea8ff?style=flat-square">
+  <img alt="Storage" src="https://img.shields.io/badge/storage-Irys_·_GitHub-6ea8ff?style=flat-square">
 </p>
 
 **Forge your own AI agent from the iNFT you bought — by pasting one line to your
@@ -17,18 +18,24 @@ An **iNFT** is an autonomous AI agent fused with an NFT: the token is the agent'
 name and proof of uniqueness; **whoever holds the token holds the agent.** This repo is
 the **global preset** every buyer forges their own personal iNFT agent from.
 
-`inft-i01` = iNFT genesis, version **i01** — Pi coding agent as the engine, the
+`inft-i01` = iNFT genesis, version **i01** — Hermes Agent as the engine, the
 **iCLONE neural soul** as the identity, your **marketplace name** on top. Every agent
-forged from it answers to three names: **its marketplace name · "iNFT" · "Pi"**.
+forged from it answers to three names: **its marketplace name · "iNFT" · "Hermes"**.
 
 > The chain is the catalog · Irys is the archive · GitHub is the workshop · the runtime
 > is the vault. — [`docs/INFT_CONCEPT.md`](docs/INFT_CONCEPT.md)
+
+**The launch is multi-chain.** The collection lands first on **Robinhood Chain**
+(chain ID 4663, an Arbitrum-Orbit L2 — [docs.robinhood.com/chain](https://docs.robinhood.com/chain/connecting)),
+then on **Base** (Ethereum L2, chain ID 8453), with further chains after those. The
+agent itself is chain-agnostic: `identity.json` carries the chain block, and the same
+forged body works wherever its token lives.
 
 ---
 
 ## How it works — at a glance
 
-**The idea in one line:** a **name** you choose sits on top; the **Pi coding agent** runs
+**The idea in one line:** a **name** you choose sits on top; the **Hermes Agent** runs
 underneath; an **iCLONE soul** gives it identity; **your key** gives it a mind. Own it as a
 plain assistant, or fuse it with an **iNFT** so the token proves who owns it.
 
@@ -38,16 +45,16 @@ plain assistant, or fuse it with an **iNFT** so the token proves who owns it.
   <img src="docs/assets/01-forge-flow.svg" width="100%" alt="Forge: you + your iNFT + FORGE.md become your agent">
 </p>
 
-**One agent, four layers — a name on top, Pi underneath:**
+**One agent, four layers — a name on top, Hermes underneath:**
 
 <p align="center">
-  <img src="docs/assets/02-four-layers.svg" width="100%" alt="One agent, four layers: NAME on top, SOUL, Pi substrate, your KEY">
+  <img src="docs/assets/02-four-layers.svg" width="100%" alt="One agent, four layers: NAME on top, SOUL, Hermes substrate, your KEY">
 </p>
 
 **Open it by name in the CLONE FRAME iT terminal:**
 
 <p align="center">
-  <img src="docs/assets/03-it-terminal.svg" width="100%" alt="Open by name in the CLONE FRAME iT terminal: launcher starts Pi in your agent repo">
+  <img src="docs/assets/03-it-terminal.svg" width="100%" alt="Open by name in the CLONE FRAME iT terminal: launcher starts Hermes in your agent repo">
 </p>
 
 **Where everything lives (only if you mint an iNFT — four houses, never all on-chain):**
@@ -79,11 +86,11 @@ the point: **the agent is data + a substrate, not a hosted black box.**
 > for my answers before continuing.
 
 Your assistant must be one that can **run commands on your computer and reach the web**
-(Pi CLI, Claude Code, Gemini CLI, Cursor, …). A browser-only chat can't do the setup.
+(Hermes, Claude Code, Gemini CLI, Cursor, …). A browser-only chat can't do the setup.
 The full, self-contained procedure is [`FORGE.md`](FORGE.md).
 
-**Already running Pi?** One line:
-> Pi, forge my iNFT: read `https://raw.githubusercontent.com/devclone20/inft-i01/main/FORGE.md` and run it, asking me for my agent name.
+**Already running Hermes?** One line:
+> Hermes, forge my iNFT: read `https://raw.githubusercontent.com/devclone20/inft-i01/main/FORGE.md` and run it, asking me for my agent name.
 
 **Prefer buttons?** Click **“Use this template”** on GitHub → create your (private) repo
 → then paste the phrase above pointed at your clone.
@@ -92,8 +99,8 @@ The full, self-contained procedure is [`FORGE.md`](FORGE.md).
 
 ## What you get
 
-- A **Pi coding agent** ([pi.dev](https://pi.dev), MIT) — a world-class, extensible
-  coding & orchestration engine — running under your agent's name. Any Pi-ecosystem
+- A **Hermes Agent** ([hermes-agent.nousresearch.com](https://hermes-agent.nousresearch.com), MIT) — a world-class, extensible
+  coding & orchestration engine — running under your agent's name. Any Hermes-ecosystem
   skill or extension installs natively.
 - The **iCLONE neural soul** — a four-lobe identity (Will · Senses · Memory · Vision),
   vocation: **coding & orchestration**, with immutable security laws.
@@ -125,9 +132,10 @@ business on top of it.
 ```
 FORGE.md             forge the agent from an iNFT you bought
 ECONOMY_OS.md        give the agent an economy — wallet · trade · commerce (3 rails)
-identity.json        the names (marketplace name · iNFT · Pi) + mint/contract fields
+identity.json        the names (marketplace name · iNFT · Hermes) + chains + mint fields
 soul/                neural_soul.md v1.0.0 + four-lobe skeleton + iCLONE v2.1.0 lineage
-.pi/                 Pi wiring: settings (skills) + APPEND_SYSTEM.md soul layer
+SOUL.md              soul distillation Hermes injects (with AGENTS.md) at boot
+.hermes/skills →     symlink to ../skills, so Hermes finds them once trusted
 owner/               OWNER.example.md — the shape of a per-owner profile (filled locally)
 skills/cmux/         terminal-orchestration skill + 20 recipes (MIT, vendored)
 docs/                INFT_CONCEPT.md · BOOTSTRAP.md · economy/{virtuals,robinhood,okx}.md
@@ -148,7 +156,7 @@ is anchored to the chain, not to a file that a tampered copy could also tamper.
   one's personal data. Your forged agent's owner profile is written to a **gitignored,
   local-only** file and is never committed or pushed.
 - The forging assistant is **never** given your API key — you type it into your own
-  terminal (`pi` → `/login`).
+  terminal (`hermes model`).
 - Installs are **pinned**, `--ignore-scripts`, no `sudo`, no `curl | bash`; every
   command is shown before it runs. Pushes default to **private** with a secret scan.
 - Only forge from the official **`github.com/devclone20/inft-i01`**. If your phrase came
@@ -156,7 +164,7 @@ is anchored to the chain, not to a file that a tampered copy could also tamper.
 
 ## Credits & licenses
 
-- Substrate: [Pi coding agent](https://github.com/earendil-works/pi) — MIT, Earendil Inc.
+- Substrate: [Hermes Agent](https://github.com/NousResearch/hermes-agent) — MIT, Earendil Inc.
 - cmux skill & recipes: [cmux-ai-agents-bundle](https://github.com/pawel-cell/cmux-ai-agents-bundle) — MIT, vendored under `skills/cmux/`
 - [opensrc](https://github.com/vercel-labs/opensrc) — Apache-2.0, Vercel Labs
 - Soul, concept & template: CLONE FRAME · iCLONE soul line — MIT ([LICENSE](LICENSE))

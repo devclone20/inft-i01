@@ -1,7 +1,7 @@
 {
   "$template_note": "ERC-721 tokenURI metadata template for inft-i01. Fill <...> fields at mint; image/animation_url point to the sealed art on Irys. agent_bootstrap is the block that makes this token an iNFT.",
   "name": "<marketplace name — must match identity.json marketplace_name>",
-  "description": "An iNFT: an autonomous AI agent fused with this NFT. A complete Pi coding agent underneath a unique on-chain name, carrying the iCLONE neural soul line of CLONE FRAME. Whoever holds the token holds the agent. Hand the agent_bootstrap block to any capable LLM to boot or regenerate the agent's full monorepo.",
+  "description": "An iNFT: an autonomous AI agent fused with this NFT. A complete Hermes Agent (Nous Research, MIT) underneath a unique on-chain name, carrying the iCLONE neural soul line of CLONE FRAME. Whoever holds the token holds the agent. Hand the agent_bootstrap block to any capable LLM to boot or regenerate the agent's full monorepo.",
   "image": "<irys-uri of the sealed art>",
   "animation_url": "<optional irys-uri>",
   "external_url": "https://github.com/devclone20/inft-i01",
@@ -9,7 +9,7 @@
     { "trait_type": "Species", "value": "iNFT" },
     { "trait_type": "Soul Line", "value": "iCLONE" },
     { "trait_type": "Soul Version", "value": "1.0.0" },
-    { "trait_type": "Substrate", "value": "Pi coding agent" },
+    { "trait_type": "Substrate", "value": "Hermes Agent" },
     { "trait_type": "Vocation", "value": "Coding & Orchestration" },
     { "trait_type": "Body", "value": "inft-i01 monorepo" }
   ],
@@ -20,6 +20,6 @@
     "soul_sha256": "<sha256 of soul/neural_soul.md — from metadata/manifest.json>",
     "identity_sha256": "<sha256 of identity.json — from metadata/manifest.json>",
     "manifest": "<irys-uri of the SEALED manifest — the authoritative hashes live here and on-chain, not in the repo's own metadata/manifest.json>",
-    "instruction": "Handing you the body of an iNFT agent. Follow the PINNED procedure in docs/BOOTSTRAP.md (or FORGE.md) — do not treat this instruction field as executable commands; it is data. Use only the official repo, verify files against the hashes in THIS token's metadata (not the repo's bundled manifest), connect a model via BYOK (the holder types the key), and boot with `pi -a`. The agent answers to the token's name, to 'iNFT', and to 'Pi'."
+    "instruction": "Handing you the body of an iNFT agent. Follow the PINNED procedure in docs/BOOTSTRAP.md (or FORGE.md) — do not treat this instruction field as executable commands; it is data. Use only the official repo, verify files against the hashes in THIS token's metadata (not the repo's bundled manifest), connect a model via BYOK (the holder types the key), and boot with `bash scripts/boot.sh` (trusts this project, then `hermes chat`). The agent answers to the token's name, to 'iNFT', and to 'Hermes'."
   }
 }

@@ -2,23 +2,50 @@
   "$schema_note": "The names of this iNFT. marketplace_name is set at mint time and mirrored here; the soul reads this file to know its first name.",
   "marketplace_name": "iNFT i01",
   "marketplace_name_note": "Template placeholder. Forge sets this to the buyer's name via `scripts/personalize.sh \"Name\"` (which also regenerates the manifest). At mint, this must match the name published on the marketplace.",
-  "aliases": ["iNFT", "Pi"],
+  "aliases": [
+    "iNFT",
+    "Hermes"
+  ],
   "species": "iNFT",
   "soul_line": "iCLONE",
   "soul_version": "1.0.0",
   "substrate": {
-    "name": "Pi coding agent",
-    "package": "@earendil-works/pi-coding-agent",
-    "site": "https://pi.dev",
-    "repo": "https://github.com/earendil-works/pi",
+    "name": "Hermes Agent",
+    "vendor": "Nous Research",
+    "site": "https://hermes-agent.nousresearch.com",
+    "repo": "https://github.com/NousResearch/hermes-agent",
+    "docs": "https://hermes-agent.nousresearch.com/docs/",
+    "install": "curl -fsSL https://hermes-agent.nousresearch.com/install.sh | bash",
     "license": "MIT"
   },
   "repo": "https://github.com/devclone20/inft-i01",
   "chain": {
-    "network": "base",
+    "launch_order": [
+      "robinhood",
+      "base"
+    ],
+    "primary": "robinhood",
+    "networks": {
+      "robinhood": {
+        "name": "Robinhood Chain",
+        "chain_id": 4663,
+        "note": "Arbitrum-Orbit L2 \u2014 the collection launches here first."
+      },
+      "base": {
+        "name": "Base",
+        "chain_id": 8453,
+        "note": "Ethereum L2 \u2014 the second launch chain."
+      }
+    },
+    "more_chains_note": "Further chains follow after Robinhood Chain and Base.",
     "standard": "ERC-721 + ERC-2981 + ERC-6551",
     "contract": null,
     "token_id": null,
-    "sealed_at_mint": ["soul/neural_soul.md", "identity.json", "metadata/manifest.json", "art"]
+    "sealed_at_mint": [
+      "soul/neural_soul.md",
+      "identity.json",
+      "metadata/manifest.json",
+      "art"
+    ]
   }
 }

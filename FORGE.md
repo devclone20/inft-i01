@@ -15,7 +15,7 @@
 ## What this will and won't do (read this first)
 
 **What it does — all on your own computer:**
-- Downloads the **Pi coding agent** (the open-source engine your iNFT runs on) and
+- Downloads the **Hermes Agent** (the open-source engine your iNFT runs on) and
   `opensrc` (a source-reader tool).
 - Creates a folder for your agent, named by you.
 - Wires in your agent's name, its soul (identity), and its skills.
@@ -27,7 +27,7 @@
 - ❌ **Never asks you to paste your API key into this chat.** You type your key into
   your own terminal, yourself. If a key ever appears in this conversation, rotate it.
 - ❌ Never sends your files anywhere. The only network calls are: the npm registry
-  (to install Pi), GitHub (to fetch this template), and the model provider **you**
+  (to install Hermes), GitHub (to fetch this template), and the model provider **you**
   choose.
 
 **You stay in control:** every command is shown before it runs; you can stop anytime;
@@ -52,8 +52,8 @@ git --version  # needed to version the agent's repo
 ```
 
 - If **you cannot run shell commands**, stop and tell the buyer: *"I can't set this up
-  from here — I need an assistant that runs on your computer. The easiest is the Pi CLI
-  itself (`npm i -g @earendil-works/pi-coding-agent`) or Claude Code / Gemini CLI /
+  from here — I need an assistant that runs on your computer. The easiest is the Hermes
+  itself (`curl -fsSL https://hermes-agent.nousresearch.com/install.sh | bash`) or Claude Code / Gemini CLI /
   Cursor. Install one, then paste the same phrase to it."*
 - If **Node is missing:** macOS → `brew install node`; Windows → install Node from
   nodejs.org (or use WSL); Linux → use `nvm` (`https://github.com/nvm-sh/nvm`). Then
@@ -70,7 +70,7 @@ Do not proceed until all three pass.
 Ask these, and **wait** for answers. Do not invent values.
 
 1. **Name** — *"What do you want to name your iNFT agent? This becomes its marketplace
-   name — the name it answers to, alongside **iNFT** and **Pi**. You can rename it
+   name — the name it answers to, alongside **iNFT** and **Hermes**. You can rename it
    later."*
 2. **Owner profile** — *"Tell me who it works for. Three quick things: (a) what should
    your agent call you? (b) what language should it speak with you by default? (c)
@@ -117,7 +117,7 @@ bash scripts/setup.sh
 ```
 
 If a global install hits a permissions error (`EACCES`), do **not** sudo. Use the
-no-global fallback the script prints (`npx @earendil-works/pi-coding-agent …`), or set
+no-global fallback the script prints (`curl -fsSL https://hermes-agent.nousresearch.com/install.sh | bash …`), or set
 an npm prefix the user owns (`npm config set prefix ~/.npm-global` and add its `bin` to
 PATH). Show the buyer what you ran.
 
@@ -133,17 +133,17 @@ bash scripts/personalize.sh "AGENT NAME HERE"
 ```
 
 Then create the owner profile file from the buyer's Step 1(2) answer and append it to
-the local system prompt (the script untracks `.pi/APPEND_SYSTEM.md` so the owner's
+the local system prompt (the script untracks `SOUL.md` so the owner's
 profile is **never committed**):
 
-- Write the buyer's profile into **`.pi/owner.local.md`** (gitignored — local only),
+- Write the buyer's profile into **`.hermes/owner.local.md`** (gitignored — local only),
   following the shape in `owner/OWNER.example.md`.
 - Run `bash scripts/personalize.sh --apply-owner` to fold it into
-  `.pi/APPEND_SYSTEM.md` and untrack that file in this repo.
+  `SOUL.md` and untrack that file in this repo.
 
 Verify no PII is tracked before any push:
 ```bash
-git check-ignore -v .pi/owner.local.md .pi/APPEND_SYSTEM.md   # both must be ignored
+git check-ignore -v .hermes/owner.local.md SOUL.md   # both must be ignored
 git status --porcelain                                        # owner files must NOT appear
 ```
 
@@ -154,8 +154,8 @@ git status --porcelain                                        # owner files must
 **You (the assistant) must NOT receive the key.** Tell the buyer to do ONE of these in
 **their own terminal**:
 
-- **Easiest — Pi's login:** run `pi` once and use `/login` to pick their provider and
-  paste the key into Pi's own prompt (Pi stores it at `~/.pi/agent/auth.json`, mode
+- **Easiest — Hermes's model setup:** run `hermes model` once to pick their provider and
+  paste the key into Hermes's own prompt (Hermes stores it at `~/.hermes/auth.json`, mode
   `0600`, outside this repo).
 - **Or env var** for their provider (Anthropic `ANTHROPIC_API_KEY`, OpenAI
   `OPENAI_API_KEY`, Google `GEMINI_API_KEY`, DeepSeek `DEEPSEEK_API_KEY`, Groq
@@ -176,20 +176,20 @@ one — it limits the blast radius if a web page ever tries to burn credits.
 
 ## Step 6 — Boot and verify
 
-The soul + skills live under `.pi/`, which Pi only loads for **trusted** projects. In
+The soul + skills live under `.hermes/`, which Hermes only loads for **trusted** projects. In
 headless/non-interactive runs you must pass `-a` (approve/trust) or they are silently
 ignored. The repo ships a boot helper that does this:
 
 ```bash
-bash scripts/boot.sh              # = pi -a   (interactive)
+bash scripts/boot.sh              # = hermes chat   (interactive)
 # or a one-shot smoke test:
 bash scripts/boot.sh -p "In one line, tell me your three names and your vocation."
 ```
 
 A correct boot answers with the agent's **marketplace name**, that it is an **iNFT**,
-and that it is **Pi** underneath, with a coding & orchestration vocation. If it doesn't
-mention its name or soul, trust wasn't granted — re-run with `pi -a`, or set
-`~/.pi/agent/settings.json` → `{"defaultProjectTrust":"always"}`.
+and that it is **Hermes** underneath, with a coding & orchestration vocation. If it doesn't
+mention its name or soul, trust wasn't granted — re-run with `hermes chat` (project trusted), or set
+`~/.hermes/config.yaml` → `{"defaultProjectTrust":"always"}`.
 
 ---
 
@@ -211,7 +211,7 @@ Never push a public repo containing an owner profile or a key. If unsure, keep i
 
 ## Done
 
-The buyer now has a working iNFT agent: **<their name> + Pi**, with the iCLONE soul,
+The buyer now has a working iNFT agent: **<their name> + Hermes**, with the iCLONE soul,
 the cmux orchestration skill, and opensrc — on their machine (and optionally their
 private GitHub). Point them at the README for day-to-day use, and remind them: their
 key stays theirs, and the agent grows every session.
@@ -221,7 +221,7 @@ key stays theirs, and the agent grows every session.
 ## Security model (why the steps are shaped this way)
 
 - **The forging assistant is trusted with shell, not with the key.** BYOK never
-  requires the model to see the key (Step 5). Keys live in `~/.pi/agent/auth.json`
+  requires the model to see the key (Step 5). Keys live in `~/.hermes/auth.json`
   (outside the repo) or an env var — never in a tracked file.
 - **PII never gets committed.** The owner profile is a gitignored local file; forge
   untracks the personalized system prompt (Step 4). The tracked template is
