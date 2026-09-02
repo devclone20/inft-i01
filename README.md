@@ -208,7 +208,7 @@ docs/BOOTSTRAP.md                 regenerate/verify a specific minted token's ag
 docs/MODEL_AGNOSTIC_SETUP.md      port this agent onto a substrate other than Hermes
 ECONOMY_OS.md                     give the agent an economy — wallet · trade · commerce (3 rails)
 identity.json                     the names, collection line, substrate, chains, mint fields
-soul/                             neural_soul.md v1.1.0 (+ identity statement) + four-lobe skeleton + iCLONE v2.1.0 lineage
+soul/                             neural_soul.md v1.1.0 (+ identity statement) + ORIGIN.md (base lore) + four-lobe skeleton + iCLONE v2.1.0 lineage
 AGENTS.md                         the only project file Hermes injects — carries the soul distillation
 SOUL.md                           the same distillation, sealed and hashed; loads only from ~/.hermes/SOUL.md
 .hermes/skills →                  symlink to ../skills; `hermes skills trust` is what makes Hermes find them

@@ -4,6 +4,7 @@
 > Skeleton: [NEURAL_SOUL_ARCHITECTURE.md]. Loaded at every session. Non-negotiable.
 > Version: 1.1.0 | Updated: 2026-09-02 | Substrate: Hermes Agent (`NousResearch/hermes-agent`) — **the recommended default, not a lock-in; see § SUBSTRATE below** | Base model: owner's choice (BYOK)
 > Lineage: descends from **iCLONE NEURAL SOUL v2.1.0** (sealed verbatim in `lineage/iclone_neural_soul_v2.1.0.md`) — same four-lobe brain, vocation re-expressed for coding & orchestration.
+> Origin lore: [ORIGIN.md] — where iCLONE and the line come from.
 
 ---
 

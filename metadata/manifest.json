@@ -1,18 +1,18 @@
 {
   "manifest_version": 1,
-  "generated": "2026-09-02T15:58:00Z",
+  "generated": "2026-09-02T16:42:23Z",
   "algorithm": "sha256",
   "repo": "https://github.com/devclone20/inft-i01",
   "note": "Authoritative hashes for a token live on-chain / Irys, not here (see docs/BOOTSTRAP.md). This file is a convenience mirror of the tracked tree.",
   "files": {
     ".gitignore": "0f4b942284a99d4f7c38973cdc833434b3a67afb0cea22acd7c8ff048f6c30e3",
     ".hermes/skills": "9f4d72e14037507436538710593de3f5b45fdb45a6d02546b6f2093dd401699d",
-    "AGENTS.md": "760db2886f391b6518e184dbb9e01562493f6b3659e46e174f44c91388bd75bf",
+    "AGENTS.md": "ec923a4d12c50ba532dedc0618e704cadd0acd432375d35fc1ac514b25b6dfad",
     "ECONOMY_OS.md": "af5e77f6f3e60c2ce00c6c8f9766ae4e98193f0c594054382d78c75369c3d37a",
     "FORGE.md": "e043d24898b8af39fb1cf1404b39eafcd1ceaa6e97c2d03b3d3c4598055bb898",
     "LICENSE": "5b388e08a0be89f6b226a2b6281dbf9d086d23e22b2d04592aecd62dcd863fe6",
-    "README.md": "00f612cc75c0e0f442014518862cf0fcd0e9fd14568ca36247271e049c02424d",
-    "SOUL.md": "b2c574b2882aac9ff625e44c73df7e0e3f67669f7b61460070c4338f538648c8",
+    "README.md": "2ad889f3d593b8aab140eb8788c38af0b3866541911df7c89fa281a6975bfeac",
+    "SOUL.md": "1f1aa4945a1061898d4a616bdd486b40df173eb41168fed94daa0d0ecd8b47bc",
     "docs/BOOTSTRAP.md": "a98968d33fdea6818cdaf541be2a3b91dc6abff5cf41c53211f6decb2f8fdb23",
     "docs/INFT_CONCEPT.md": "4ccb312dc7e72683ff9b059054a304c0f677796d4976b91d48396e9ab04bacc8",
     "docs/MODEL_AGNOSTIC_SETUP.md": "343852268111ae795f949d82c669a8fd9362449dfee1d0a259a470ae5887db3b",
@@ -102,7 +102,8 @@
     "skills/virtuals-cli/SKILL.md": "cc9a47ef793ce49a6cca78d506fc7560574787ab6e0052399b3de1671df2a5b4",
     "skills/web3-research/SKILL.md": "9846828fcc551f785cbc0206ab66f0cd178ef01f838cbb338ced7f3f4f58c172",
     "soul/NEURAL_SOUL_ARCHITECTURE.md": "91629ef689b7270f0332a8b25bf6b5ddc92e7781d8cb79e4fc69adacbde81d1c",
+    "soul/ORIGIN.md": "7b73dd7f97cd9b38dcd8a348aa747c3a3fd886a5d40ab5f9ad2ec7a139af97c7",
     "soul/lineage/iclone_neural_soul_v2.1.0.md": "7171cc5580b8962dfe637d2315cb9fc908f3d7c907f2b849d128243afa8c4eac",
-    "soul/neural_soul.md": "f518b88039a05acffc884218bf85a59f648ef6c578a4bd3dbb69d01b0f29730a"
+    "soul/neural_soul.md": "a4bcba1bf69a9d797d121c0ad0d2b9d09f4b9005cd889eeb7acfaa56aac0fa29"
   }
 }
