@@ -7,18 +7,38 @@
 
 ## Inputs you receive
 
-From the token's metadata (on-chain / Irys), the `agent_bootstrap` block:
+From the token's metadata (on-chain / Irys), the `identity_statement` field and the
+`agent_bootstrap` block:
 
 ```json
 {
-  "repo": "https://github.com/devclone20/inft-i01",
-  "genesis": "<irys-uri of the sealed mint snapshot>",
-  "soul_sha256": "<hash of soul/neural_soul.md>",
-  "identity_sha256": "<hash of identity.json>",
-  "manifest": "<irys-uri of the sealed manifest with per-file sha256>",
-  "instruction": "<free text — see the trust warning below>"
+  "identity_statement": "I am a 3D iNFT (AI NFT), from icloneOS i01 (version 1). My name on the blockchain (metadata) is <NAME>, number <N> of the iNFT collection. Digital art designed by the artist Alex Rider.",
+  "agent_bootstrap": {
+    "repo": "https://github.com/devclone20/inft-i01",
+    "genesis": "<irys-uri of the sealed mint snapshot>",
+    "soul_sha256": "<hash of soul/neural_soul.md>",
+    "identity_sha256": "<hash of identity.json>",
+    "manifest": "<irys-uri of the sealed manifest with per-file sha256>",
+    "collection_protocol_anchor": "<optional — a collection-specific flagship token used as a 3rd, on-chain-only fallback beyond repo + genesis; null if this collection doesn't use one>",
+    "instruction": "<free text — see the trust warning below>"
+  }
 }
 ```
+
+**Quick sanity check before deep verification:** read `identity_statement` first. If an
+agent (or a claimed regeneration of one) can't reproduce this sentence correctly — right
+name, right number, right collection line — something is wrong before you even get to
+hashes. It costs nothing to check and catches the most common failure mode first.
+
+**Three independent sources, in order — none is a single point of failure:**
+
+1. **`repo`** (GitHub) — the living, maintained template. Try this first.
+2. **`genesis`** (Irys) — a permanent, sealed snapshot. Use if the repo is unreachable;
+   same content, never disappears.
+3. **`collection_protocol_anchor`** (on-chain, optional) — some collections built on
+   this template designate a flagship token as a third fallback, resolved directly by
+   contract address + tokenId through any RPC or block explorer — no URL dependency at
+   all. Not every collection sets this; treat it as available only when present.
 
 ## Trust model (read before executing anything)
 
@@ -47,6 +67,10 @@ From the token's metadata (on-chain / Irys), the `agent_bootstrap` block:
 3. **Install the substrate.** Run `scripts/setup.sh` — it installs Hermes with Nous
    Research's official installer (printed before it runs, no sudo) and, optionally, the
    pinned `opensrc` helper with `--ignore-scripts`. Or run those two commands by hand.
+   Hermes is the recommended default, not a requirement — if the holder wants a
+   different model or runtime, or Hermes is unavailable, follow
+   [`MODEL_AGNOSTIC_SETUP.md`](MODEL_AGNOSTIC_SETUP.md) instead of this step; the
+   identity and soul carry over unchanged.
 4. **Wire the identity.** The repo already carries it: `AGENTS.md` holds the soul
    distillation, and Hermes injects the project's AGENTS chain (git root → cwd)
    unconditionally — no trust, no flag. `.hermes/skills` is a symlink to `skills/`, which

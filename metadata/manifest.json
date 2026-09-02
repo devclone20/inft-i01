@@ -1,20 +1,21 @@
 {
   "manifest_version": 1,
-  "generated": "2026-08-29T23:14:28Z",
+  "generated": "2026-09-02T15:58:00Z",
   "algorithm": "sha256",
   "repo": "https://github.com/devclone20/inft-i01",
   "note": "Authoritative hashes for a token live on-chain / Irys, not here (see docs/BOOTSTRAP.md). This file is a convenience mirror of the tracked tree.",
   "files": {
     ".gitignore": "0f4b942284a99d4f7c38973cdc833434b3a67afb0cea22acd7c8ff048f6c30e3",
     ".hermes/skills": "9f4d72e14037507436538710593de3f5b45fdb45a6d02546b6f2093dd401699d",
-    "AGENTS.md": "1de46d418aac7cd511223ccb5d2ac5e31424e908150c7a818e717811d6e6641d",
+    "AGENTS.md": "760db2886f391b6518e184dbb9e01562493f6b3659e46e174f44c91388bd75bf",
     "ECONOMY_OS.md": "af5e77f6f3e60c2ce00c6c8f9766ae4e98193f0c594054382d78c75369c3d37a",
     "FORGE.md": "e043d24898b8af39fb1cf1404b39eafcd1ceaa6e97c2d03b3d3c4598055bb898",
     "LICENSE": "5b388e08a0be89f6b226a2b6281dbf9d086d23e22b2d04592aecd62dcd863fe6",
-    "README.md": "22c057558cfdf046e9617d25f044f40252123994dbabeebe24ae7e37decac73a",
-    "SOUL.md": "814572ae8bdbcd88b05f85f10d65da8a845345730c9e8ab78215bfed0ed092e0",
-    "docs/BOOTSTRAP.md": "d1436ca0382bb5d9ae80db3c52340c2d2cb9ebba350ca68852b2a96ad3abfbc7",
-    "docs/INFT_CONCEPT.md": "89ed4e054f11d2cc3e8f62a91a2d99d934e9471f21dfaddd89c13fb2fa005d29",
+    "README.md": "00f612cc75c0e0f442014518862cf0fcd0e9fd14568ca36247271e049c02424d",
+    "SOUL.md": "b2c574b2882aac9ff625e44c73df7e0e3f67669f7b61460070c4338f538648c8",
+    "docs/BOOTSTRAP.md": "a98968d33fdea6818cdaf541be2a3b91dc6abff5cf41c53211f6decb2f8fdb23",
+    "docs/INFT_CONCEPT.md": "4ccb312dc7e72683ff9b059054a304c0f677796d4976b91d48396e9ab04bacc8",
+    "docs/MODEL_AGNOSTIC_SETUP.md": "343852268111ae795f949d82c669a8fd9362449dfee1d0a259a470ae5887db3b",
     "docs/assets/01-forge-flow.svg": "339006d77237e5bc4ef917724a472923ded7ef5b1f8531cd1acafadea45016d2",
     "docs/assets/02-four-layers.svg": "fffb4e8b8a586420a83f4b7da3acaa00d5113021f105c335e5fb7f068eeb1c97",
     "docs/assets/03-it-terminal.svg": "14c53e67f3d0caab1a799865086e5090f956e8a7c05f1e35db0741bab6d7c567",
@@ -24,8 +25,8 @@
     "docs/economy/okx.md": "4b9106def4ec1e7305e533b96cd5200982e7ffa6bf6023973a907f2f7e556f58",
     "docs/economy/robinhood.md": "3ff7d5af0691ccf91c1636ae8e6720b2aea9fa85c3a8fa8928712bd0b02442a1",
     "docs/economy/virtuals.md": "00cc3d980a4967da9e0a21271853dbddd3689a166662917ae5a76d6d6eb91187",
-    "identity.json": "400c484274ce17417572ea20a9a92d4d7e92342b405bc97386d8c54d84557130",
-    "metadata/metadata.template.json": "0fb4538497c1844a52621ea390e293f0accb7bd7546b398bf4361079f9fd22af",
+    "identity.json": "1be7d9ea7443be638aca2a30435b59971396c406399c53a310920f733f9b80ee",
+    "metadata/metadata.template.json": "27fed4781146b126626e729d7f520449797a21c88833b27f21424edb085fd170",
     "owner/OWNER.example.md": "92692377c7988451bdb999eb809910465c66c3b1da457c8c5e4812e0ce1bed58",
     "package.json": "1a647adbe25276c3a5527edde17c59d243aa51b860da0a14fbeabf7871051411",
     "scripts/boot.sh": "dabd78d00115dcf2dbc056c6fd5fdc002bf3367a682a4d064e7d67eb867688cd",
@@ -102,6 +103,6 @@
     "skills/web3-research/SKILL.md": "9846828fcc551f785cbc0206ab66f0cd178ef01f838cbb338ced7f3f4f58c172",
     "soul/NEURAL_SOUL_ARCHITECTURE.md": "91629ef689b7270f0332a8b25bf6b5ddc92e7781d8cb79e4fc69adacbde81d1c",
     "soul/lineage/iclone_neural_soul_v2.1.0.md": "7171cc5580b8962dfe637d2315cb9fc908f3d7c907f2b849d128243afa8c4eac",
-    "soul/neural_soul.md": "792eb35ccdf74f1cf8671b67adcded60f420a15d0161cf3f1ef026846eec9746"
+    "soul/neural_soul.md": "f518b88039a05acffc884218bf85a59f648ef6c578a4bd3dbb69d01b0f29730a"
   }
 }
