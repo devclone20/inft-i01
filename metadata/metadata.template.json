@@ -21,7 +21,7 @@
     "version": 2,
     "repo": "https://github.com/devclone20/inft-i01",
     "repo_note": "1st source — the living, maintained template. Try this first.",
-    "genesis": "<irys-uri of the sealed mint snapshot>",
+    "genesis": "https://gateway.irys.xyz/DcsBtBEqEzY12jzxCPDmin3xPreA9UFtpSjUnsMoNmVk/data/",
     "genesis_note": "2nd source — permanent backup. Use if the repo is unreachable; same content, sealed forever.",
     "soul_sha256": "<sha256 of soul/neural_soul.md — from metadata/manifest.json>",
     "identity_sha256": "<sha256 of identity.json — from metadata/manifest.json>",

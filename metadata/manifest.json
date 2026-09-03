@@ -1,6 +1,6 @@
 {
   "manifest_version": 1,
-  "generated": "2026-09-02T16:42:23Z",
+  "generated": "2026-09-03T01:49:22Z",
   "algorithm": "sha256",
   "repo": "https://github.com/devclone20/inft-i01",
   "note": "Authoritative hashes for a token live on-chain / Irys, not here (see docs/BOOTSTRAP.md). This file is a convenience mirror of the tracked tree.",
@@ -26,7 +26,7 @@
     "docs/economy/robinhood.md": "3ff7d5af0691ccf91c1636ae8e6720b2aea9fa85c3a8fa8928712bd0b02442a1",
     "docs/economy/virtuals.md": "00cc3d980a4967da9e0a21271853dbddd3689a166662917ae5a76d6d6eb91187",
     "identity.json": "1be7d9ea7443be638aca2a30435b59971396c406399c53a310920f733f9b80ee",
-    "metadata/metadata.template.json": "27fed4781146b126626e729d7f520449797a21c88833b27f21424edb085fd170",
+    "metadata/metadata.template.json": "fdf177388f53851a211968468b05f329631dc7d5971c7d14b29482148a94d6b1",
     "owner/OWNER.example.md": "92692377c7988451bdb999eb809910465c66c3b1da457c8c5e4812e0ce1bed58",
     "package.json": "1a647adbe25276c3a5527edde17c59d243aa51b860da0a14fbeabf7871051411",
     "scripts/boot.sh": "dabd78d00115dcf2dbc056c6fd5fdc002bf3367a682a4d064e7d67eb867688cd",
